@@ -12,12 +12,16 @@
 
 ```text
 box-im-offline-bundle/
+├── OpenJDK17U-jdk_x64_linux.tar.gz  # [环境] OpenJDK 17 LTS (Linux x64 免安装版, ~184MB, Eclipse Temurin 17.0.20.1)
 ├── maven-repository.tar.gz          # [后端] 全量离线 Maven 本地仓库包 (~735MB，已预清理 lastUpdated 与远程校验)
 ├── im-web-node_modules.tar.gz       # [前端] box-im Web 前端完整 node_modules 依赖包 (~38MB)
 ├── im-admin-ui-node_modules.tar.gz  # [前端] box-im-admin 管理后台完整 node_modules 依赖包 (~146MB)
 ├── settings.xml                     # [配置] 纯离线专用的 Maven settings 配置文件 (强制 offline 模式)
 ├── install_offline.sh               # [脚本] Linux / macOS 内网一键解压安装脚本
 ├── install_offline.bat              # [脚本] Windows 内网一键解压安装脚本
+├── upload_to_nexus.sh               # [脚本] 批量推送 Maven 依赖至内部私服脚本 (Linux/macOS)
+├── upload_to_nexus.bat              # [脚本] 批量推送 Maven 依赖至内部私服脚本 (Windows)
+├── ARTIFACT_REPOSITORY_IMPORT_GUIDE.md # [文档] 企业内部制品库导入与分发实操手册
 └── OFFLINE_DEV_GUIDE.md             # [文档] 本二次开发与离线部署指南
 ```
 
@@ -47,7 +51,8 @@ chmod +x install_offline.sh
 该脚本会自动：
 1. 解压 `maven-repository.tar.gz` 到当前用户的 `~/.m2/repository`；
 2. 检测并自动配置离线 `~/.m2/settings.xml`；
-3. 将前端依赖解压到 `box-im/im-web/node_modules` 与 `box-im-admin/im-admin-ui/node_modules`。
+3. 将前端依赖解压到 `box-im/im-web/node_modules` 与 `box-im-admin/im-admin-ui/node_modules`；
+4. 若系统尚未配置 Java 17，自动解压 `OpenJDK17U-jdk_x64_linux.tar.gz` 到 `~/.local/jdk-17` 并输出环境变量配置提示。
 
 ### 2.2 Windows 一键安装
 双击执行 `install_offline.bat`，或在命令行中运行：
