@@ -1,15 +1,12 @@
 package org.dromara.system.domain.bo;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 
 /**
  * 用户密码修改bo
  */
-@Data
 public class SysUserPasswordBo implements Serializable {
 
     @Serial
@@ -26,4 +23,23 @@ public class SysUserPasswordBo implements Serializable {
      */
     @NotBlank(message = "新密码不能为空")
     private String newPassword;
+
+    public SysUserPasswordBo() {
+    }
+
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
+    }
 }

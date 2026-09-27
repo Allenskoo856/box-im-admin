@@ -6,8 +6,6 @@ import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import org.dromara.system.domain.SysDictData;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +16,6 @@ import java.util.Date;
  *
  * @author Michelle.Chung
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysDictData.class)
 public class SysDictDataVo implements Serializable {
@@ -85,4 +82,91 @@ public class SysDictDataVo implements Serializable {
     @ExcelProperty(value = "创建时间")
     private Date createTime;
 
+
+    public SysDictDataVo() {
+    }
+
+    public Long getDictCode() {
+        return dictCode;
+    }
+
+    public void setDictCode(Long dictCode) {
+        this.dictCode = dictCode;
+    }
+
+    public Integer getDictSort() {
+        return dictSort;
+    }
+
+    public void setDictSort(Integer dictSort) {
+        this.dictSort = dictSort;
+    }
+
+    public String getDictLabel() {
+        return dictLabel;
+    }
+
+    public void setDictLabel(String dictLabel) {
+        this.dictLabel = dictLabel;
+    }
+
+    public String getDictValue() {
+        return dictValue;
+    }
+
+    public void setDictValue(String dictValue) {
+        this.dictValue = dictValue;
+    }
+
+    public String getDictType() {
+        return dictType;
+    }
+
+    public void setDictType(String dictType) {
+        this.dictType = dictType;
+    }
+
+    public String getCssClass() {
+        return cssClass;
+    }
+
+    public void setCssClass(String cssClass) {
+        this.cssClass = cssClass;
+    }
+
+    public String getListClass() {
+        return listClass;
+    }
+
+    public void setListClass(String listClass) {
+        this.listClass = listClass;
+    }
+
+    public String getIsDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(String isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    public void setDefault(String isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

@@ -4,14 +4,11 @@ import org.dromara.common.core.service.UserService;
 import org.dromara.common.translation.annotation.TranslationType;
 import org.dromara.common.translation.constant.TransConstant;
 import org.dromara.common.translation.core.TranslationInterface;
-import lombok.AllArgsConstructor;
-
 /**
  * 用户名翻译实现
  *
  * @author Lion Li
  */
-@AllArgsConstructor
 @TranslationType(type = TransConstant.USER_ID_TO_NAME)
 public class UserNameTranslationImpl implements TranslationInterface<String> {
 
@@ -23,5 +20,9 @@ public class UserNameTranslationImpl implements TranslationInterface<String> {
             return userService.selectUserNameById(id);
         }
         return null;
+    }
+
+    public UserNameTranslationImpl(UserService userService) {
+        this.userService = userService;
     }
 }

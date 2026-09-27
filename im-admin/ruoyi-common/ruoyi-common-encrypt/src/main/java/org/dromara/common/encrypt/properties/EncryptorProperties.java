@@ -2,7 +2,6 @@ package org.dromara.common.encrypt.properties;
 
 import org.dromara.common.encrypt.enumd.AlgorithmType;
 import org.dromara.common.encrypt.enumd.EncodeType;
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -11,7 +10,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author 老马
  * @version 4.6.0
  */
-@Data
 @ConfigurationProperties(prefix = "mybatis-encryptor")
 public class EncryptorProperties {
 
@@ -45,4 +43,59 @@ public class EncryptorProperties {
      */
     private EncodeType encode;
 
+
+    public EncryptorProperties() {
+    }
+
+    public Boolean getEnable() {
+        return enable;
+    }
+
+    public Boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(Boolean enable) {
+        this.enable = enable;
+    }
+
+    public AlgorithmType getAlgorithm() {
+        return algorithm;
+    }
+
+    public void setAlgorithm(AlgorithmType algorithm) {
+        this.algorithm = algorithm;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
+    public void setPrivateKey(String privateKey) {
+        this.privateKey = privateKey;
+    }
+
+    public EncodeType getEncode() {
+        return encode;
+    }
+
+    public void setEncode(EncodeType encode) {
+        this.encode = encode;
+    }
 }

@@ -11,7 +11,6 @@ import org.dromara.common.excel.utils.ExcelUtil;
 import org.dromara.system.domain.bo.SysOperLogBo;
 import org.dromara.system.domain.vo.SysOperLogVo;
 import org.dromara.system.service.ISysOperLogService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +23,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/monitor/operlog")
 public class SysOperlogController extends BaseController {
@@ -71,5 +69,9 @@ public class SysOperlogController extends BaseController {
     public R<Void> clean() {
         operLogService.cleanOperLog();
         return R.ok();
+    }
+
+    public SysOperlogController(ISysOperLogService operLogService) {
+        this.operLogService = operLogService;
     }
 }

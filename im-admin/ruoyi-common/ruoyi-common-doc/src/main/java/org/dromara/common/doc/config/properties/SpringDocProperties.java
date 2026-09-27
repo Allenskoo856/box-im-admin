@@ -6,7 +6,6 @@ import io.swagger.v3.oas.models.Paths;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.tags.Tag;
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
@@ -17,7 +16,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Data
 @ConfigurationProperties(prefix = "springdoc")
 public class SpringDocProperties {
 
@@ -59,7 +57,6 @@ public class SpringDocProperties {
      *
      * 为了 springboot 自动生产配置提示信息，所以这里复制一个类出来
      */
-    @Data
     public static class InfoProperties {
 
         /**
@@ -89,6 +86,91 @@ public class SpringDocProperties {
          */
         private String version = null;
 
+        public InfoProperties() {
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Contact getContact() {
+            return contact;
+        }
+
+        public void setContact(Contact contact) {
+            this.contact = contact;
+        }
+
+        public License getLicense() {
+            return license;
+        }
+
+        public void setLicense(License license) {
+            this.license = license;
+        }
+
+        public String getVersion() {
+            return version;
+        }
+
+        public void setVersion(String version) {
+            this.version = version;
+        }
     }
 
+
+    public SpringDocProperties() {
+    }
+
+    public InfoProperties getInfo() {
+        return info;
+    }
+
+    public void setInfo(InfoProperties info) {
+        this.info = info;
+    }
+
+    public ExternalDocumentation getExternalDocs() {
+        return externalDocs;
+    }
+
+    public void setExternalDocs(ExternalDocumentation externalDocs) {
+        this.externalDocs = externalDocs;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public Paths getPaths() {
+        return paths;
+    }
+
+    public void setPaths(Paths paths) {
+        this.paths = paths;
+    }
+
+    public Components getComponents() {
+        return components;
+    }
+
+    public void setComponents(Components components) {
+        this.components = components;
+    }
 }

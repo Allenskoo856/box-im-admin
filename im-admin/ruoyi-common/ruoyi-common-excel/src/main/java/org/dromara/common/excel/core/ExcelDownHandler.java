@@ -11,7 +11,6 @@ import com.alibaba.excel.util.ClassUtils;
 import com.alibaba.excel.write.handler.SheetWriteHandler;
 import com.alibaba.excel.write.metadata.holder.WriteSheetHolder;
 import com.alibaba.excel.write.metadata.holder.WriteWorkbookHolder;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddressList;
 import org.apache.poi.ss.util.WorkbookUtil;
@@ -35,8 +34,9 @@ import java.util.*;
  *
  * @author Emil.Zhang
  */
-@Slf4j
 public class ExcelDownHandler implements SheetWriteHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ExcelDownHandler.class);
+
 
     /**
      * Excel表格中的列名英文

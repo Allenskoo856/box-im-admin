@@ -1,7 +1,5 @@
 package org.dromara.common.websocket.dto;
 
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -11,7 +9,6 @@ import java.util.List;
  *
  * @author zendwang
  */
-@Data
 public class WebSocketMessageDto implements Serializable {
 
     @Serial
@@ -26,4 +23,23 @@ public class WebSocketMessageDto implements Serializable {
      * 需要发送的消息
      */
     private String message;
+
+    public WebSocketMessageDto() {
+    }
+
+    public List<Long> getSessionKeys() {
+        return sessionKeys;
+    }
+
+    public void setSessionKeys(List<Long> sessionKeys) {
+        this.sessionKeys = sessionKeys;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

@@ -4,9 +4,6 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
 import io.github.linpeilie.Converter;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.util.List;
 import java.util.Map;
 
@@ -17,8 +14,11 @@ import java.util.Map;
  *
  * @author Michelle.Chung
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MapstructUtils {
+
+    private MapstructUtils() {
+    }
+
 
     private final static Converter CONVERTER = SpringUtils.getBean(Converter.class);
 
@@ -89,5 +89,4 @@ public class MapstructUtils {
         }
         return CONVERTER.convert(map, beanClass);
     }
-
 }

@@ -3,7 +3,6 @@ package org.dromara.system.domain.vo;
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import org.dromara.common.translation.annotation.Translation;
@@ -19,7 +18,6 @@ import java.util.Date;
  *
  * @author Michelle.Chung
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysPost.class)
 public class SysPostVo implements Serializable {
@@ -88,4 +86,87 @@ public class SysPostVo implements Serializable {
     @Translation(type = TransConstant.DEPT_ID_TO_NAME, mapper = "deptId")
     private String deptName;
 
+
+    public SysPostVo() {
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getPostName() {
+        return postName;
+    }
+
+    public void setPostName(String postName) {
+        this.postName = postName;
+    }
+
+    public String getPostCategory() {
+        return postCategory;
+    }
+
+    public void setPostCategory(String postCategory) {
+        this.postCategory = postCategory;
+    }
+
+    public Integer getPostSort() {
+        return postSort;
+    }
+
+    public void setPostSort(Integer postSort) {
+        this.postSort = postSort;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
 }

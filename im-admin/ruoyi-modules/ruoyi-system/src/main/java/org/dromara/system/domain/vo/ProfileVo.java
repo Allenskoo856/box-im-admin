@@ -1,13 +1,10 @@
 package org.dromara.system.domain.vo;
 
-import lombok.Data;
-
 /**
  * 用户个人信息
  *
  * @author Michelle.Chung
  */
-@Data
 public class ProfileVo {
 
     /**
@@ -26,4 +23,31 @@ public class ProfileVo {
     private String postGroup;
 
 
+
+    public ProfileVo() {
+    }
+
+    public SysUserVo getUser() {
+        return user;
+    }
+
+    public void setUser(SysUserVo user) {
+        this.user = user;
+    }
+
+    public String getRoleGroup() {
+        return roleGroup;
+    }
+
+    public void setRoleGroup(String roleGroup) {
+        this.roleGroup = roleGroup;
+    }
+
+    public String getPostGroup() {
+        return postGroup;
+    }
+
+    public void setPostGroup(String postGroup) {
+        this.postGroup = postGroup;
+    }
 }

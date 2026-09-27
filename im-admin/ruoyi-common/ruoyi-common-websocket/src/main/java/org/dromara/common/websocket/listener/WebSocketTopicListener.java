@@ -1,7 +1,6 @@
 package org.dromara.common.websocket.listener;
 
 import cn.hutool.core.collection.CollUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.websocket.holder.WebSocketSessionHolder;
 import org.dromara.common.websocket.utils.WebSocketUtils;
 import org.springframework.boot.ApplicationArguments;
@@ -13,8 +12,9 @@ import org.springframework.core.Ordered;
  *
  * @author zendwang
  */
-@Slf4j
 public class WebSocketTopicListener implements ApplicationRunner, Ordered {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(WebSocketTopicListener.class);
+
 
     /**
      * 在Spring Boot应用程序启动时初始化WebSocket主题订阅监听器

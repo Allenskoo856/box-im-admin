@@ -1,15 +1,10 @@
 package org.dromara.im.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author: Blue
  * @date: 2024-09-06
  * @version: 1.0
  */
-@Getter
-@AllArgsConstructor
 public enum ImSmPushStatus {
 
     /**
@@ -31,4 +26,11 @@ public enum ImSmPushStatus {
 
     private final Integer value;
 
+    ImSmPushStatus(Integer value) {
+        this.value = value;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
 }

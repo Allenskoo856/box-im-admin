@@ -1,7 +1,5 @@
 package org.dromara.generator.util;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.RegExUtils;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.generator.config.GenConfig;
@@ -16,8 +14,11 @@ import java.util.Arrays;
  *
  * @author ruoyi
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class GenUtils {
+
+    private GenUtils() {
+    }
+
 
     /**
      * 初始化表信息

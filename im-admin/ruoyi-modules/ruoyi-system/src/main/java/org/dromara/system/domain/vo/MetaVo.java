@@ -1,15 +1,12 @@
 package org.dromara.system.domain.vo;
 
 import org.dromara.common.core.utils.StringUtils;
-import lombok.Data;
-
 /**
  * 路由显示信息
  *
  * @author ruoyi
  */
 
-@Data
 public class MetaVo {
 
     /**
@@ -58,4 +55,43 @@ public class MetaVo {
         }
     }
 
+
+    public MetaVo() {
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public boolean getNoCache() {
+        return noCache;
+    }
+
+    public boolean isNoCache() {
+        return noCache;
+    }
+
+    public void setNoCache(boolean noCache) {
+        this.noCache = noCache;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
 }

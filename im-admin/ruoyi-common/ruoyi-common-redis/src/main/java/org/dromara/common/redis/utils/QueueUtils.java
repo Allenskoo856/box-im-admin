@@ -1,7 +1,5 @@
 package org.dromara.common.redis.utils;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.SpringUtils;
 import org.redisson.api.*;
 
@@ -17,8 +15,11 @@ import java.util.function.Function;
  * @author Lion Li
  * @version 3.6.0 新增
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class QueueUtils {
+
+    private QueueUtils() {
+    }
+
 
     private static final RedissonClient CLIENT = SpringUtils.getBean(RedissonClient.class);
 

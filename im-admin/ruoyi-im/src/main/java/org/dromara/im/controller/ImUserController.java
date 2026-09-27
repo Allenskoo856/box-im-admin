@@ -5,7 +5,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.excel.utils.ExcelUtil;
 import org.dromara.common.log.annotation.Log;
@@ -34,7 +33,6 @@ import java.util.stream.Collectors;
  * @date 2024-12-22
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/im/user")
 public class ImUserController extends BaseController {
@@ -135,5 +133,9 @@ public class ImUserController extends BaseController {
         stats.put("weeklyActive", userService.getWeeklyActiveUserCount());
         stats.put("monthlyActive", userService.getMonthlyActiveUserCount());
         return R.ok(stats);
+    }
+
+    public ImUserController(IImUserService userService) {
+        this.userService = userService;
     }
 }

@@ -1,9 +1,6 @@
 package org.dromara.common.core.domain.model;
 
 import org.dromara.common.core.domain.dto.RoleDTO;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -14,8 +11,6 @@ import java.util.Set;
  *
  * @author Lion Li
  */
-@Data
-@NoArgsConstructor
 public class LoginUser implements Serializable {
 
     @Serial
@@ -139,4 +134,175 @@ public class LoginUser implements Serializable {
         return userType + ":" + userId;
     }
 
+
+    public LoginUser() {
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public String getDeptCategory() {
+        return deptCategory;
+    }
+
+    public void setDeptCategory(String deptCategory) {
+        this.deptCategory = deptCategory;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public Long getLoginTime() {
+        return loginTime;
+    }
+
+    public void setLoginTime(Long loginTime) {
+        this.loginTime = loginTime;
+    }
+
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public String getIpaddr() {
+        return ipaddr;
+    }
+
+    public void setIpaddr(String ipaddr) {
+        this.ipaddr = ipaddr;
+    }
+
+    public String getLoginLocation() {
+        return loginLocation;
+    }
+
+    public void setLoginLocation(String loginLocation) {
+        this.loginLocation = loginLocation;
+    }
+
+    public String getBrowser() {
+        return browser;
+    }
+
+    public void setBrowser(String browser) {
+        this.browser = browser;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public Set<String> getMenuPermission() {
+        return menuPermission;
+    }
+
+    public void setMenuPermission(Set<String> menuPermission) {
+        this.menuPermission = menuPermission;
+    }
+
+    public Set<String> getRolePermission() {
+        return rolePermission;
+    }
+
+    public void setRolePermission(Set<String> rolePermission) {
+        this.rolePermission = rolePermission;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public List<RoleDTO> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<RoleDTO> roles) {
+        this.roles = roles;
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getClientKey() {
+        return clientKey;
+    }
+
+    public void setClientKey(String clientKey) {
+        this.clientKey = clientKey;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
 }

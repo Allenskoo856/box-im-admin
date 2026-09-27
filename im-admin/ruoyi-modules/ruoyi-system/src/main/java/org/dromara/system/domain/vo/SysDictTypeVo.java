@@ -6,8 +6,6 @@ import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import org.dromara.system.domain.SysDictType;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +16,6 @@ import java.util.Date;
  *
  * @author Michelle.Chung
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysDictType.class)
 public class SysDictTypeVo implements Serializable {
@@ -56,4 +53,47 @@ public class SysDictTypeVo implements Serializable {
     @ExcelProperty(value = "创建时间")
     private Date createTime;
 
+
+    public SysDictTypeVo() {
+    }
+
+    public Long getDictId() {
+        return dictId;
+    }
+
+    public void setDictId(Long dictId) {
+        this.dictId = dictId;
+    }
+
+    public String getDictName() {
+        return dictName;
+    }
+
+    public void setDictName(String dictName) {
+        this.dictName = dictName;
+    }
+
+    public String getDictType() {
+        return dictType;
+    }
+
+    public void setDictType(String dictType) {
+        this.dictType = dictType;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

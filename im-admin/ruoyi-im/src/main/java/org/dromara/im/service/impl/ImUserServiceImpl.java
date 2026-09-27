@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.dromara.common.core.utils.StringUtils;
@@ -35,7 +34,6 @@ import java.util.Map;
  * @date 2024-12-22
  */
 @DS(ImConstant.DS_IM_PLATFORM)
-@RequiredArgsConstructor
 @Service
 public class ImUserServiceImpl implements IImUserService {
 
@@ -188,5 +186,10 @@ public class ImUserServiceImpl implements IImUserService {
         LambdaQueryWrapper<ImUser> wrapper = Wrappers.lambdaQuery();
         wrapper.ge(ImUser::getLastLoginTime, DateUtils.addDays(new Date(), -30));
         return baseMapper.selectCount(wrapper);
+    }
+
+    public ImUserServiceImpl(ImRedisMQTemplate redisMQTemplate, ImUserMapper baseMapper) {
+        this.redisMQTemplate = redisMQTemplate;
+        this.baseMapper = baseMapper;
     }
 }

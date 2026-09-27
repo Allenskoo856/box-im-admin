@@ -2,7 +2,6 @@ package org.dromara.common.websocket.interceptor;
 
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.stp.StpUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.model.LoginUser;
 import org.dromara.common.core.utils.ServletUtils;
 import org.dromara.common.core.utils.StringUtils;
@@ -21,8 +20,9 @@ import static org.dromara.common.websocket.constant.WebSocketConstants.LOGIN_USE
  *
  * @author zendwang
  */
-@Slf4j
 public class PlusWebSocketInterceptor implements HandshakeInterceptor {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PlusWebSocketInterceptor.class);
+
 
     /**
      * WebSocket握手之前执行的前置处理方法

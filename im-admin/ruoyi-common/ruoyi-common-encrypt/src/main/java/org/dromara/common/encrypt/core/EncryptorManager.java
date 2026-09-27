@@ -3,8 +3,6 @@ package org.dromara.common.encrypt.core;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.ReflectUtil;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.io.Resources;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.encrypt.annotation.EncryptField;
@@ -30,9 +28,9 @@ import java.util.stream.Collectors;
  * @author 老马
  * @version 4.6.0
  */
-@Slf4j
-@NoArgsConstructor
 public class EncryptorManager {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EncryptorManager.class);
+
 
     /**
      * 缓存加密器
@@ -159,4 +157,7 @@ public class EncryptorManager {
         return fieldSet;
     }
 
+
+    public EncryptorManager() {
+    }
 }

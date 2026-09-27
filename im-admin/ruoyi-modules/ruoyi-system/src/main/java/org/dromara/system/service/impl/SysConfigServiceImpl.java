@@ -22,7 +22,6 @@ import org.dromara.system.domain.bo.SysConfigBo;
 import org.dromara.system.domain.vo.SysConfigVo;
 import org.dromara.system.mapper.SysConfigMapper;
 import org.dromara.system.service.ISysConfigService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -36,7 +35,6 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
 
@@ -215,4 +213,8 @@ public class SysConfigServiceImpl implements ISysConfigService, ConfigService {
         return SpringUtils.getAopProxy(this).selectConfigByKey(configKey);
     }
 
+
+    public SysConfigServiceImpl(SysConfigMapper baseMapper) {
+        this.baseMapper = baseMapper;
+    }
 }

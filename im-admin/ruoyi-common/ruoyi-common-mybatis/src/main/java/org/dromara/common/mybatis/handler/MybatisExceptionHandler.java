@@ -1,7 +1,6 @@
 package org.dromara.common.mybatis.handler;
 
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.utils.StringUtils;
 import org.mybatis.spring.MyBatisSystemException;
@@ -14,9 +13,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  *
  * @author Lion Li
  */
-@Slf4j
 @RestControllerAdvice
 public class MybatisExceptionHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MybatisExceptionHandler.class);
+
 
     /**
      * 主键或UNIQUE索引，数据重复异常

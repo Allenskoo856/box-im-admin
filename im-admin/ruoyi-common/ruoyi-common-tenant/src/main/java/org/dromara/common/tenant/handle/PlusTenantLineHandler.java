@@ -2,8 +2,6 @@ package org.dromara.common.tenant.handle;
 
 import cn.hutool.core.collection.ListUtil;
 import com.baomidou.mybatisplus.extension.plugins.handler.TenantLineHandler;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.NullValue;
 import net.sf.jsqlparser.expression.StringValue;
@@ -18,9 +16,9 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Slf4j
-@AllArgsConstructor
 public class PlusTenantLineHandler implements TenantLineHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PlusTenantLineHandler.class);
+
 
     private final TenantProperties tenantProperties;
 
@@ -53,4 +51,8 @@ public class PlusTenantLineHandler implements TenantLineHandler {
         return true;
     }
 
+
+    public PlusTenantLineHandler(TenantProperties tenantProperties) {
+        this.tenantProperties = tenantProperties;
+    }
 }

@@ -7,7 +7,6 @@ import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.domain.model.LoginUser;
@@ -44,7 +43,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/user")
 public class SysUserController extends BaseController {
@@ -297,4 +295,12 @@ public class SysUserController extends BaseController {
         return R.ok(userService.selectUserListByDept(deptId));
     }
 
+
+    public SysUserController(ISysUserService userService, ISysRoleService roleService, ISysPostService postService, ISysDeptService deptService, ISysTenantService tenantService) {
+        this.userService = userService;
+        this.roleService = roleService;
+        this.postService = postService;
+        this.deptService = deptService;
+        this.tenantService = tenantService;
+    }
 }

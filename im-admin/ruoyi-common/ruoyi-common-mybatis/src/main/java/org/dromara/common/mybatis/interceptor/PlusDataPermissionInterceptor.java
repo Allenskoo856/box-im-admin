@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.toolkit.PluginUtils;
 import com.baomidou.mybatisplus.extension.plugins.handler.MultiDataPermissionHandler;
 import com.baomidou.mybatisplus.extension.plugins.inner.BaseMultiTableInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.InnerInterceptor;
-import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.schema.Table;
 import net.sf.jsqlparser.statement.delete.Delete;
@@ -32,8 +31,9 @@ import java.util.List;
  * @author Lion Li
  * @version 3.5.0
  */
-@Slf4j
 public class PlusDataPermissionInterceptor extends BaseMultiTableInnerInterceptor implements InnerInterceptor {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PlusDataPermissionInterceptor.class);
+
 
     private final PlusDataPermissionHandler dataPermissionHandler;
 

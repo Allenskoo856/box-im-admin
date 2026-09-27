@@ -2,7 +2,6 @@ package org.dromara.system.controller.system;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.excel.utils.ExcelUtil;
 import org.dromara.common.log.annotation.Log;
@@ -31,7 +30,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/role")
 public class SysRoleController extends BaseController {
@@ -225,5 +223,11 @@ public class SysRoleController extends BaseController {
         selectVo.setCheckedKeys(deptService.selectDeptListByRoleId(roleId));
         selectVo.setDepts(deptService.selectDeptTreeList(new SysDeptBo()));
         return R.ok(selectVo);
+    }
+
+    public SysRoleController(ISysRoleService roleService, ISysUserService userService, ISysDeptService deptService) {
+        this.roleService = roleService;
+        this.userService = userService;
+        this.deptService = deptService;
     }
 }

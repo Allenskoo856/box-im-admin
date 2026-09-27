@@ -3,7 +3,6 @@ package org.dromara.common.social.topiam;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;
 import com.xkcoding.http.support.HttpHeader;
-import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.cache.AuthStateCache;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.exception.AuthException;
@@ -24,8 +23,9 @@ import static org.dromara.common.social.topiam.AuthTopiamSource.TOPIAM;
  * @author xlsea
  * @since 2024-01-06
  */
-@Slf4j
 public class AuthTopIamRequest extends AuthDefaultRequest {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AuthTopIamRequest.class);
+
 
     public static final String SERVER_URL = SpringUtils.getProperty("justauth.type.topiam.server-url");
 

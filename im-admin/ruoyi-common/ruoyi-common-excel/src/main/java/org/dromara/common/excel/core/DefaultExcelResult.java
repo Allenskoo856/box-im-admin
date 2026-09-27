@@ -1,8 +1,6 @@
 package org.dromara.common.excel.core;
 
 import cn.hutool.core.util.StrUtil;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,13 +15,11 @@ public class DefaultExcelResult<T> implements ExcelResult<T> {
     /**
      * 数据对象list
      */
-    @Setter
     private List<T> list;
 
     /**
      * 错误信息列表
      */
-    @Setter
     private List<String> errorList;
 
     public DefaultExcelResult() {
@@ -69,5 +65,13 @@ public class DefaultExcelResult<T> implements ExcelResult<T> {
                 return "";
             }
         }
+    }
+
+    public void setList(List<T> list) {
+        this.list = list;
+    }
+
+    public void setErrorList(List<String> errorList) {
+        this.errorList = errorList;
     }
 }

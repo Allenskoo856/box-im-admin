@@ -1,9 +1,6 @@
 package org.dromara.common.core.domain;
 
 import org.dromara.common.core.constant.HttpStatus;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -12,8 +9,6 @@ import java.io.Serializable;
  *
  * @author Lion Li
  */
-@Data
-@NoArgsConstructor
 public class R<T> implements Serializable {
 
     @Serial
@@ -106,5 +101,37 @@ public class R<T> implements Serializable {
 
     public static <T> Boolean isSuccess(R<T> ret) {
         return R.SUCCESS == ret.getCode();
+    }
+
+    public int getSUCCESS() {
+        return SUCCESS;
+    }
+
+    public int getFAIL() {
+        return FAIL;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
     }
 }

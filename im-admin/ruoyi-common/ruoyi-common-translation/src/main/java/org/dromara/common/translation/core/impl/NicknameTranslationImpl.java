@@ -1,6 +1,5 @@
 package org.dromara.common.translation.core.impl;
 
-import lombok.AllArgsConstructor;
 import org.dromara.common.core.service.UserService;
 import org.dromara.common.translation.annotation.TranslationType;
 import org.dromara.common.translation.constant.TransConstant;
@@ -11,7 +10,6 @@ import org.dromara.common.translation.core.TranslationInterface;
  *
  * @author may
  */
-@AllArgsConstructor
 @TranslationType(type = TransConstant.USER_ID_TO_NICKNAME)
 public class NicknameTranslationImpl implements TranslationInterface<String> {
 
@@ -25,5 +23,9 @@ public class NicknameTranslationImpl implements TranslationInterface<String> {
             return userService.selectNicknameByIds(ids);
         }
         return null;
+    }
+
+    public NicknameTranslationImpl(UserService userService) {
+        this.userService = userService;
     }
 }

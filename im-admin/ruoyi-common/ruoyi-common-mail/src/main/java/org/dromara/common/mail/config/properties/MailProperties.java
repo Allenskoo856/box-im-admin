@@ -1,6 +1,5 @@
 package org.dromara.common.mail.config.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -8,7 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *
  * @author Michelle.Chung
  */
-@Data
 @ConfigurationProperties(prefix = "mail")
 public class MailProperties {
 
@@ -66,4 +64,111 @@ public class MailProperties {
      * Socket连接超时值，单位毫秒，缺省值不超时
      */
     private Long connectionTimeout;
+
+    public MailProperties() {
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public Boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    public Boolean getAuth() {
+        return auth;
+    }
+
+    public Boolean isAuth() {
+        return auth;
+    }
+
+    public void setAuth(Boolean auth) {
+        this.auth = auth;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public Boolean getStarttlsEnable() {
+        return starttlsEnable;
+    }
+
+    public Boolean isStarttlsEnable() {
+        return starttlsEnable;
+    }
+
+    public void setStarttlsEnable(Boolean starttlsEnable) {
+        this.starttlsEnable = starttlsEnable;
+    }
+
+    public Boolean getSslEnable() {
+        return sslEnable;
+    }
+
+    public Boolean isSslEnable() {
+        return sslEnable;
+    }
+
+    public void setSslEnable(Boolean sslEnable) {
+        this.sslEnable = sslEnable;
+    }
+
+    public Long getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Long timeout) {
+        this.timeout = timeout;
+    }
+
+    public Long getConnectionTimeout() {
+        return connectionTimeout;
+    }
+
+    public void setConnectionTimeout(Long connectionTimeout) {
+        this.connectionTimeout = connectionTimeout;
+    }
 }

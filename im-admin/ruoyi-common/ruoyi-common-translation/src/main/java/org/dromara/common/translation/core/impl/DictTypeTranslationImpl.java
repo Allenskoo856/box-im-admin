@@ -5,14 +5,11 @@ import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.translation.annotation.TranslationType;
 import org.dromara.common.translation.constant.TransConstant;
 import org.dromara.common.translation.core.TranslationInterface;
-import lombok.AllArgsConstructor;
-
 /**
  * 字典翻译实现
  *
  * @author Lion Li
  */
-@AllArgsConstructor
 @TranslationType(type = TransConstant.DICT_TYPE_TO_LABEL)
 public class DictTypeTranslationImpl implements TranslationInterface<String> {
 
@@ -24,5 +21,9 @@ public class DictTypeTranslationImpl implements TranslationInterface<String> {
             return dictService.getDictLabel(other, dictValue);
         }
         return null;
+    }
+
+    public DictTypeTranslationImpl(DictService dictService) {
+        this.dictService = dictService;
     }
 }

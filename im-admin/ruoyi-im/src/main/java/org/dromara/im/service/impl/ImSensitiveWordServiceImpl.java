@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.mybatis.core.page.PageQuery;
@@ -28,7 +27,6 @@ import java.util.List;
  * @date 2024-12-22
  */
 @DS(ImConstant.DS_IM_PLATFORM)
-@RequiredArgsConstructor
 @Service
 public class ImSensitiveWordServiceImpl implements IImSensitiveWordService {
 
@@ -123,5 +121,9 @@ public class ImSensitiveWordServiceImpl implements IImSensitiveWordService {
         wrapper.set(ImSensitiveWord::getEnabled,bo.getEnabled());
         return this.baseMapper.update(wrapper) > 0;
 
+    }
+
+    public ImSensitiveWordServiceImpl(ImSensitiveWordMapper baseMapper) {
+        this.baseMapper = baseMapper;
     }
 }

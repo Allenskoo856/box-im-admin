@@ -1,15 +1,10 @@
 package org.dromara.common.core.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * 登录类型
  *
  * @author Lion Li
  */
-@Getter
-@AllArgsConstructor
 public enum LoginType {
 
     /**
@@ -41,4 +36,17 @@ public enum LoginType {
      * 登录重试限制计数提示
      */
     final String retryLimitCount;
+
+    LoginType(String retryLimitExceed, String retryLimitCount) {
+        this.retryLimitExceed = retryLimitExceed;
+        this.retryLimitCount = retryLimitCount;
+    }
+
+    public String getRetryLimitExceed() {
+        return this.retryLimitExceed;
+    }
+
+    public String getRetryLimitCount() {
+        return this.retryLimitCount;
+    }
 }

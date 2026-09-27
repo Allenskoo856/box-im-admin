@@ -14,8 +14,6 @@ import org.dromara.common.core.service.DictService;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.excel.utils.ExcelUtil;
-import lombok.extern.slf4j.Slf4j;
-
 import java.lang.reflect.Field;
 
 /**
@@ -23,8 +21,9 @@ import java.lang.reflect.Field;
  *
  * @author Lion Li
  */
-@Slf4j
 public class ExcelDictConvert implements Converter<Object> {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ExcelDictConvert.class);
+
 
     @Override
     public Class<Object> supportJavaTypeKey() {

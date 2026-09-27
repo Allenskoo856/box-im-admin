@@ -10,8 +10,6 @@ import cn.hutool.extra.mail.JakartaUserPassAuthenticator;
 import cn.hutool.extra.mail.MailAccount;
 import jakarta.mail.Authenticator;
 import jakarta.mail.Session;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.core.utils.StringUtils;
 
@@ -25,8 +23,11 @@ import java.util.Map.Entry;
 /**
  * 邮件工具类
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MailUtils {
+
+    private MailUtils() {
+    }
+
 
     private static final MailAccount ACCOUNT = SpringUtils.getBean(MailAccount.class);
 

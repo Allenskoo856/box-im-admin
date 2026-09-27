@@ -1,17 +1,12 @@
 package org.dromara.common.core.domain.model;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 /**
  * 三方登录对象
  *
  * @author Lion Li
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 public class SocialLoginBody extends LoginBody {
 
     /**
@@ -32,4 +27,47 @@ public class SocialLoginBody extends LoginBody {
     @NotBlank(message = "{social.state.not.blank}")
     private String socialState;
 
+
+    public SocialLoginBody() {
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getSocialCode() {
+        return socialCode;
+    }
+
+    public void setSocialCode(String socialCode) {
+        this.socialCode = socialCode;
+    }
+
+    public String getSocialState() {
+        return socialState;
+    }
+
+    public void setSocialState(String socialState) {
+        this.socialState = socialState;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SocialLoginBody that = (SocialLoginBody) o;
+        return java.util.Objects.equals(source, that.source) &&
+               java.util.Objects.equals(socialCode, that.socialCode) &&
+               java.util.Objects.equals(socialState, that.socialState);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), source, socialCode, socialState);
+    }
 }

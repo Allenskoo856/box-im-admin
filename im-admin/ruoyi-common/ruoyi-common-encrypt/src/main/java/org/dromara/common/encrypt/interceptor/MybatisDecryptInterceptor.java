@@ -3,8 +3,6 @@ package org.dromara.common.encrypt.interceptor;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.plugin.*;
 import org.dromara.common.core.utils.StringUtils;
@@ -25,14 +23,14 @@ import java.util.*;
  * @author 老马
  * @version 4.6.0
  */
-@Slf4j
 @Intercepts({@Signature(
     type = ResultSetHandler.class,
     method = "handleResultSets",
     args = {Statement.class})
 })
-@AllArgsConstructor
 public class MybatisDecryptInterceptor implements Interceptor {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MybatisDecryptInterceptor.class);
+
 
     private final EncryptorManager encryptorManager;
     private final EncryptorProperties defaultProperties;
@@ -116,5 +114,10 @@ public class MybatisDecryptInterceptor implements Interceptor {
     @Override
     public void setProperties(Properties properties) {
 
+    }
+
+    public MybatisDecryptInterceptor(EncryptorManager encryptorManager, EncryptorProperties defaultProperties) {
+        this.encryptorManager = encryptorManager;
+        this.defaultProperties = defaultProperties;
     }
 }

@@ -1,7 +1,5 @@
 package org.dromara.common.redis.utils;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.SpringUtils;
 import org.redisson.api.*;
 
@@ -20,9 +18,11 @@ import java.util.stream.Stream;
  * @author Lion Li
  * @version 3.1.0 新增
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @SuppressWarnings(value = {"unchecked", "rawtypes"})
 public class RedisUtils {
+
+    private RedisUtils() {
+    }
 
     private static final RedissonClient CLIENT = SpringUtils.getBean(RedissonClient.class);
 

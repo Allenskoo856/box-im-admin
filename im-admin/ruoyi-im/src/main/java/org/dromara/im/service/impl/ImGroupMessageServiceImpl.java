@@ -4,7 +4,6 @@ import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.mybatis.core.page.PageQuery;
 import org.dromara.common.mybatis.core.page.TableDataInfo;
@@ -26,7 +25,6 @@ import java.util.Map;
  * @date 2024-12-22
  */
 @DS(ImConstant.DS_IM_PLATFORM)
-@RequiredArgsConstructor
 @Service
 public class ImGroupMessageServiceImpl implements IImGroupMessageService {
 
@@ -85,4 +83,8 @@ public class ImGroupMessageServiceImpl implements IImGroupMessageService {
         return wrapper;
     }
 
+
+    public ImGroupMessageServiceImpl(ImGroupMessageMapper baseMapper) {
+        this.baseMapper = baseMapper;
+    }
 }

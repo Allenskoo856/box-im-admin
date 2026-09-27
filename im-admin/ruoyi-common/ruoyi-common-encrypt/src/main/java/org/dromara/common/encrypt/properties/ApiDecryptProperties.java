@@ -1,13 +1,11 @@
 package org.dromara.common.encrypt.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * api解密属性配置类
  * @author wdhcr
  */
-@Data
 @ConfigurationProperties(prefix = "api-decrypt")
 public class ApiDecryptProperties {
 
@@ -31,4 +29,43 @@ public class ApiDecryptProperties {
      */
     private String privateKey;
 
+
+    public ApiDecryptProperties() {
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public Boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public String getHeaderFlag() {
+        return headerFlag;
+    }
+
+    public void setHeaderFlag(String headerFlag) {
+        this.headerFlag = headerFlag;
+    }
+
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
+    public void setPrivateKey(String privateKey) {
+        this.privateKey = privateKey;
+    }
 }

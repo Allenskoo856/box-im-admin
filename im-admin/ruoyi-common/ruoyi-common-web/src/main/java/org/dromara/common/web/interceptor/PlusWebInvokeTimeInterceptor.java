@@ -5,7 +5,6 @@ import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.StopWatch;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.json.utils.JsonUtils;
@@ -23,8 +22,9 @@ import java.util.Map;
  * @author Lion Li
  * @since 3.3.0
  */
-@Slf4j
 public class PlusWebInvokeTimeInterceptor implements HandlerInterceptor {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PlusWebInvokeTimeInterceptor.class);
+
 
     private final static ThreadLocal<StopWatch> KEY_CACHE = new ThreadLocal<>();
 

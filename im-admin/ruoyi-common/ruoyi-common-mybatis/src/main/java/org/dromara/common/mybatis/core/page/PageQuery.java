@@ -4,7 +4,6 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.Data;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.core.utils.sql.SqlUtil;
@@ -19,7 +18,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Data
 public class PageQuery implements Serializable {
 
     @Serial
@@ -117,4 +115,48 @@ public class PageQuery implements Serializable {
         return (pageNum - 1) * pageSize;
     }
 
+
+    public Integer getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public Integer getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public String getOrderByColumn() {
+        return orderByColumn;
+    }
+
+    public void setOrderByColumn(String orderByColumn) {
+        this.orderByColumn = orderByColumn;
+    }
+
+    public String getIsAsc() {
+        return isAsc;
+    }
+
+    public void setIsAsc(String isAsc) {
+        this.isAsc = isAsc;
+    }
+
+    public void setAsc(String isAsc) {
+        this.isAsc = isAsc;
+    }
+
+    public int getDEFAULT_PAGE_NUM() {
+        return DEFAULT_PAGE_NUM;
+    }
+
+    public int getDEFAULT_PAGE_SIZE() {
+        return DEFAULT_PAGE_SIZE;
+    }
 }

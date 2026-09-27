@@ -5,9 +5,6 @@ import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.plugins.IgnoreStrategy;
 import com.baomidou.mybatisplus.core.plugins.InterceptorIgnoreHelper;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.core.utils.StringUtils;
@@ -23,9 +20,13 @@ import java.util.function.Supplier;
  *
  * @author Lion Li
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TenantHelper {
+
+    private TenantHelper() {
+    }
+
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TenantHelper.class);
+
 
     private static final String DYNAMIC_TENANT_KEY = GlobalConstants.GLOBAL_REDIS_KEY + "dynamicTenant";
 

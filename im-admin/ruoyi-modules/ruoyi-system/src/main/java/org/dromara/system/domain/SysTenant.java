@@ -4,9 +4,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.annotation.TableName;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 import java.io.Serial;
 import java.util.Date;
 
@@ -15,8 +12,6 @@ import java.util.Date;
  *
  * @author Michelle.Chung
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("sys_tenant")
 public class SysTenant extends BaseEntity {
 
@@ -100,4 +95,155 @@ public class SysTenant extends BaseEntity {
     @TableLogic
     private String delFlag;
 
+
+    public SysTenant() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getContactUserName() {
+        return contactUserName;
+    }
+
+    public void setContactUserName(String contactUserName) {
+        this.contactUserName = contactUserName;
+    }
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Long getPackageId() {
+        return packageId;
+    }
+
+    public void setPackageId(Long packageId) {
+        this.packageId = packageId;
+    }
+
+    public Date getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Date expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public Long getAccountCount() {
+        return accountCount;
+    }
+
+    public void setAccountCount(Long accountCount) {
+        this.accountCount = accountCount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysTenant that = (SysTenant) o;
+        return java.util.Objects.equals(id, that.id) &&
+               java.util.Objects.equals(tenantId, that.tenantId) &&
+               java.util.Objects.equals(contactUserName, that.contactUserName) &&
+               java.util.Objects.equals(contactPhone, that.contactPhone) &&
+               java.util.Objects.equals(companyName, that.companyName) &&
+               java.util.Objects.equals(licenseNumber, that.licenseNumber) &&
+               java.util.Objects.equals(address, that.address) &&
+               java.util.Objects.equals(domain, that.domain) &&
+               java.util.Objects.equals(intro, that.intro) &&
+               java.util.Objects.equals(remark, that.remark) &&
+               java.util.Objects.equals(packageId, that.packageId) &&
+               java.util.Objects.equals(expireTime, that.expireTime) &&
+               java.util.Objects.equals(accountCount, that.accountCount) &&
+               java.util.Objects.equals(status, that.status) &&
+               java.util.Objects.equals(delFlag, that.delFlag);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), id, tenantId, contactUserName, contactPhone, companyName, licenseNumber, address, domain, intro, remark, packageId, expireTime, accountCount, status, delFlag);
+    }
 }

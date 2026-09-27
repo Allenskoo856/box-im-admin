@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 #end
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ${packageName}.domain.bo.${ClassName}Bo;
 import ${packageName}.domain.vo.${ClassName}Vo;
@@ -27,11 +26,14 @@ import java.util.Collection;
  * @author ${author}
  * @date ${datetime}
  */
-@RequiredArgsConstructor
 @Service
 public class ${ClassName}ServiceImpl implements I${ClassName}Service {
 
     private final ${ClassName}Mapper baseMapper;
+
+    public ${ClassName}ServiceImpl(${ClassName}Mapper baseMapper) {
+        this.baseMapper = baseMapper;
+    }
 
     /**
      * 查询${functionName}

@@ -20,8 +20,6 @@ import org.dromara.system.domain.vo.SysUserImportVo;
 import org.dromara.system.domain.vo.SysUserVo;
 import org.dromara.system.service.ISysConfigService;
 import org.dromara.system.service.ISysUserService;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.List;
 
 /**
@@ -29,8 +27,9 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Slf4j
 public class SysUserImportListener extends AnalysisEventListener<SysUserImportVo> implements ExcelListener<SysUserImportVo> {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SysUserImportListener.class);
+
 
     private final ISysUserService userService;
 

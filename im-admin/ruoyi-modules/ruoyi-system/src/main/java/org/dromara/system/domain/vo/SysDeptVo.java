@@ -6,8 +6,6 @@ import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import org.dromara.system.domain.SysDept;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +15,6 @@ import java.util.Date;
  *
  * @author Michelle.Chung
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysDept.class)
 public class SysDeptVo implements Serializable {
@@ -99,4 +96,111 @@ public class SysDeptVo implements Serializable {
     @ExcelProperty(value = "创建时间")
     private Date createTime;
 
+
+    public SysDeptVo() {
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getAncestors() {
+        return ancestors;
+    }
+
+    public void setAncestors(String ancestors) {
+        this.ancestors = ancestors;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getDeptCategory() {
+        return deptCategory;
+    }
+
+    public void setDeptCategory(String deptCategory) {
+        this.deptCategory = deptCategory;
+    }
+
+    public Integer getOrderNum() {
+        return orderNum;
+    }
+
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
+    }
+
+    public Long getLeader() {
+        return leader;
+    }
+
+    public void setLeader(Long leader) {
+        this.leader = leader;
+    }
+
+    public String getLeaderName() {
+        return leaderName;
+    }
+
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

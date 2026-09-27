@@ -7,8 +7,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.core.utils.StringUtils;
 
@@ -21,8 +19,11 @@ import java.util.List;
  *
  * @author 芋道源码
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class JsonUtils {
+
+    private JsonUtils() {
+    }
+
 
     private static final ObjectMapper OBJECT_MAPPER = SpringUtils.getBean(ObjectMapper.class);
 

@@ -1,15 +1,10 @@
 package org.dromara.common.core.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * 用户状态
  *
  * @author LionLi
  */
-@Getter
-@AllArgsConstructor
 public enum TenantStatus {
     /**
      * 正常
@@ -27,4 +22,17 @@ public enum TenantStatus {
     private final String code;
     private final String info;
 
+
+    TenantStatus(String code, String info) {
+        this.code = code;
+        this.info = info;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getInfo() {
+        return info;
+    }
 }

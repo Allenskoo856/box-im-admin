@@ -1,0 +1,13 @@
+target/
+**/target/
+.DS_Store
+**/.DS_Store
+*.log
+logs/
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.idea/
+*.iml
+.vscode/

@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fhs.core.trans.anno.TransMethodResult;
-import lombok.RequiredArgsConstructor;
 import org.apache.logging.log4j.util.Strings;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.mybatis.core.page.PageQuery;
@@ -39,7 +38,6 @@ import java.util.Map;
  */
 @DS(ImConstant.DS_IM_PLATFORM)
 @CacheConfig(cacheManager = ImCacheConfig.REDIS_CACHE_MANAGER ,cacheNames = ImRedisKey.IM_CACHE_GROUP)
-@RequiredArgsConstructor
 @Service
 public class ImGroupServiceImpl implements IImGroupService {
 
@@ -152,4 +150,10 @@ public class ImGroupServiceImpl implements IImGroupService {
         return wrapper;
     }
 
+
+    public ImGroupServiceImpl(ImGroupMapper baseMapper, ImRedisMQTemplate redisMQTemplate, IImGroupMemberService groupMemberService) {
+        this.baseMapper = baseMapper;
+        this.redisMQTemplate = redisMQTemplate;
+        this.groupMemberService = groupMemberService;
+    }
 }

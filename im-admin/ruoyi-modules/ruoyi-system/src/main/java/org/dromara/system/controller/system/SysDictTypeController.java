@@ -12,7 +12,6 @@ import org.dromara.system.domain.bo.SysDictTypeBo;
 import org.dromara.system.domain.vo.SysDictTypeVo;
 import org.dromara.system.service.ISysDictTypeService;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +23,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/dict/type")
 public class SysDictTypeController extends BaseController {
@@ -121,5 +119,9 @@ public class SysDictTypeController extends BaseController {
     public R<List<SysDictTypeVo>> optionselect() {
         List<SysDictTypeVo> dictTypes = dictTypeService.selectDictTypeAll();
         return R.ok(dictTypes);
+    }
+
+    public SysDictTypeController(ISysDictTypeService dictTypeService) {
+        this.dictTypeService = dictTypeService;
     }
 }

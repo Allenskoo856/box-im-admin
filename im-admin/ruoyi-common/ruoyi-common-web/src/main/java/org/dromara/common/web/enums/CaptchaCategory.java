@@ -4,16 +4,12 @@ import cn.hutool.captcha.AbstractCaptcha;
 import cn.hutool.captcha.CircleCaptcha;
 import cn.hutool.captcha.LineCaptcha;
 import cn.hutool.captcha.ShearCaptcha;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 /**
  * 验证码类别
  *
  * @author Lion Li
  */
-@Getter
-@AllArgsConstructor
 public enum CaptchaCategory {
 
     /**
@@ -32,4 +28,12 @@ public enum CaptchaCategory {
     SHEAR(ShearCaptcha.class);
 
     private final Class<? extends AbstractCaptcha> clazz;
+
+    CaptchaCategory(Class<? extends AbstractCaptcha> clazz) {
+        this.clazz = clazz;
+    }
+
+    public Class<? extends AbstractCaptcha> getClazz() {
+        return this.clazz;
+    }
 }

@@ -5,7 +5,6 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.MapstructUtils;
@@ -34,7 +33,6 @@ import java.util.stream.Collectors;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysPostServiceImpl implements ISysPostService {
 
@@ -238,5 +236,11 @@ public class SysPostServiceImpl implements ISysPostService {
     public int updatePost(SysPostBo bo) {
         SysPost post = MapstructUtils.convert(bo, SysPost.class);
         return baseMapper.updateById(post);
+    }
+
+    public SysPostServiceImpl(SysPostMapper baseMapper, SysDeptMapper deptMapper, SysUserPostMapper userPostMapper) {
+        this.baseMapper = baseMapper;
+        this.deptMapper = deptMapper;
+        this.userPostMapper = userPostMapper;
     }
 }

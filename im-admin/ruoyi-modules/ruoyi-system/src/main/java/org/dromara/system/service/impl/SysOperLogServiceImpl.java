@@ -3,7 +3,6 @@ package org.dromara.system.service.impl;
 import cn.hutool.core.util.ArrayUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.core.utils.ip.AddressUtils;
@@ -29,7 +28,6 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysOperLogServiceImpl implements ISysOperLogService {
 
@@ -131,5 +129,9 @@ public class SysOperLogServiceImpl implements ISysOperLogService {
     @Override
     public void cleanOperLog() {
         baseMapper.delete(new LambdaQueryWrapper<>());
+    }
+
+    public SysOperLogServiceImpl(SysOperLogMapper baseMapper) {
+        this.baseMapper = baseMapper;
     }
 }

@@ -1,7 +1,6 @@
 package org.dromara.common.websocket.handler;
 
 import cn.hutool.core.util.ObjectUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.model.LoginUser;
 import org.dromara.common.websocket.dto.WebSocketMessageDto;
 import org.dromara.common.websocket.holder.WebSocketSessionHolder;
@@ -19,8 +18,9 @@ import static org.dromara.common.websocket.constant.WebSocketConstants.LOGIN_USE
  *
  * @author zendwang
  */
-@Slf4j
 public class PlusWebSocketHandler extends AbstractWebSocketHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PlusWebSocketHandler.class);
+
 
     /**
      * 连接成功后

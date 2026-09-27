@@ -1,6 +1,5 @@
 package org.dromara.common.social.utils;
 
-import lombok.AllArgsConstructor;
 import me.zhyd.oauth.cache.AuthStateCache;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.redis.utils.RedisUtils;
@@ -10,7 +9,6 @@ import java.time.Duration;
 /**
  * 授权状态缓存
  */
-@AllArgsConstructor
 public class AuthRedisStateCache implements AuthStateCache {
 
     /**

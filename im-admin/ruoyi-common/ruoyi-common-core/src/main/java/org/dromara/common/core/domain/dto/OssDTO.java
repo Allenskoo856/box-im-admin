@@ -1,8 +1,5 @@
 package org.dromara.common.core.domain.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -11,8 +8,6 @@ import java.io.Serializable;
  *
  * @author Lion Li
  */
-@Data
-@NoArgsConstructor
 public class OssDTO implements Serializable {
 
     @Serial
@@ -43,4 +38,47 @@ public class OssDTO implements Serializable {
      */
     private String url;
 
+
+    public OssDTO() {
+    }
+
+    public Long getOssId() {
+        return ossId;
+    }
+
+    public void setOssId(Long ossId) {
+        this.ossId = ossId;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getOriginalName() {
+        return originalName;
+    }
+
+    public void setOriginalName(String originalName) {
+        this.originalName = originalName;
+    }
+
+    public String getFileSuffix() {
+        return fileSuffix;
+    }
+
+    public void setFileSuffix(String fileSuffix) {
+        this.fileSuffix = fileSuffix;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 }

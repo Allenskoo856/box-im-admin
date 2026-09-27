@@ -6,8 +6,6 @@ import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import org.dromara.system.domain.SysTenantPackage;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -17,7 +15,6 @@ import java.io.Serializable;
  *
  * @author Michelle.Chung
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysTenantPackage.class)
 public class SysTenantPackageVo implements Serializable {
@@ -63,4 +60,59 @@ public class SysTenantPackageVo implements Serializable {
     private String status;
 
 
+
+    public SysTenantPackageVo() {
+    }
+
+    public Long getPackageId() {
+        return packageId;
+    }
+
+    public void setPackageId(Long packageId) {
+        this.packageId = packageId;
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    public String getMenuIds() {
+        return menuIds;
+    }
+
+    public void setMenuIds(String menuIds) {
+        this.menuIds = menuIds;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Boolean getMenuCheckStrictly() {
+        return menuCheckStrictly;
+    }
+
+    public Boolean isMenuCheckStrictly() {
+        return menuCheckStrictly;
+    }
+
+    public void setMenuCheckStrictly(Boolean menuCheckStrictly) {
+        this.menuCheckStrictly = menuCheckStrictly;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

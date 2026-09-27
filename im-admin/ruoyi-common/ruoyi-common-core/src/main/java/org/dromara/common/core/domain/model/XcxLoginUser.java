@@ -1,9 +1,5 @@
 package org.dromara.common.core.domain.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 
 /**
@@ -11,9 +7,6 @@ import java.io.Serial;
  *
  * @author Lion Li
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-@NoArgsConstructor
 public class XcxLoginUser extends LoginUser {
 
     @Serial
@@ -24,4 +17,29 @@ public class XcxLoginUser extends LoginUser {
      */
     private String openid;
 
+
+    public XcxLoginUser() {
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        XcxLoginUser that = (XcxLoginUser) o;
+        return java.util.Objects.equals(openid, that.openid);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), openid);
+    }
 }

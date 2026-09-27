@@ -1,7 +1,5 @@
 package org.dromara.common.core.utils.sql;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.StringUtils;
 
 /**
@@ -9,8 +7,11 @@ import org.dromara.common.core.utils.StringUtils;
  *
  * @author ruoyi
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SqlUtil {
+
+    private SqlUtil() {
+    }
+
 
     /**
      * 定义常用的 sql关键字

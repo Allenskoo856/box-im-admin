@@ -1,6 +1,5 @@
 package org.dromara.common.web.config.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Data
 @ConfigurationProperties(prefix = "xss")
 public class XssProperties {
 
@@ -25,4 +23,27 @@ public class XssProperties {
      */
     private List<String> excludeUrls = new ArrayList<>();
 
+
+    public XssProperties() {
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public Boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<String> getExcludeUrls() {
+        return excludeUrls;
+    }
+
+    public void setExcludeUrls(List<String> excludeUrls) {
+        this.excludeUrls = excludeUrls;
+    }
 }

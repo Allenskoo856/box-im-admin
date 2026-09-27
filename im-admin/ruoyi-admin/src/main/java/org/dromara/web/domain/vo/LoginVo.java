@@ -1,14 +1,11 @@
 package org.dromara.web.domain.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-
 /**
  * 登录验证信息
  *
  * @author Michelle.Chung
  */
-@Data
 public class LoginVo {
 
     /**
@@ -51,4 +48,63 @@ public class LoginVo {
      */
     private String openid;
 
+
+    public LoginVo() {
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    public Long getExpireIn() {
+        return expireIn;
+    }
+
+    public void setExpireIn(Long expireIn) {
+        this.expireIn = expireIn;
+    }
+
+    public Long getRefreshExpireIn() {
+        return refreshExpireIn;
+    }
+
+    public void setRefreshExpireIn(Long refreshExpireIn) {
+        this.refreshExpireIn = refreshExpireIn;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
 }

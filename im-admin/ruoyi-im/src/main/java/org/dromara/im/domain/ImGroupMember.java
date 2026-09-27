@@ -3,8 +3,6 @@ package org.dromara.im.domain;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fhs.core.trans.vo.TransPojo;
-import lombok.Data;
-
 import java.util.Date;
 
 /**
@@ -13,7 +11,6 @@ import java.util.Date;
  * @author Blue
  * @date 2024-12-22
  */
-@Data
 @TableName("im_group_member")
 public class ImGroupMember implements TransPojo {
 
@@ -69,4 +66,87 @@ public class ImGroupMember implements TransPojo {
     private String userNickName;
 
 
+
+    public ImGroupMember() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getRemarkNickName() {
+        return remarkNickName;
+    }
+
+    public void setRemarkNickName(String remarkNickName) {
+        this.remarkNickName = remarkNickName;
+    }
+
+    public String getHeadImage() {
+        return headImage;
+    }
+
+    public void setHeadImage(String headImage) {
+        this.headImage = headImage;
+    }
+
+    public String getRemarkGroupName() {
+        return remarkGroupName;
+    }
+
+    public void setRemarkGroupName(String remarkGroupName) {
+        this.remarkGroupName = remarkGroupName;
+    }
+
+    public Long getQuit() {
+        return quit;
+    }
+
+    public void setQuit(Long quit) {
+        this.quit = quit;
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public Date getQuitTime() {
+        return quitTime;
+    }
+
+    public void setQuitTime(Date quitTime) {
+        this.quitTime = quitTime;
+    }
+
+    public String getUserNickName() {
+        return userNickName;
+    }
+
+    public void setUserNickName(String userNickName) {
+        this.userNickName = userNickName;
+    }
 }

@@ -4,7 +4,6 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.validate.AddGroup;
 import org.dromara.common.core.validate.EditGroup;
@@ -30,7 +29,6 @@ import java.util.List;
  * @date 2024-12-22
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/im/sensitiveWord")
 public class ImSensitiveWordController extends BaseController {
@@ -110,5 +108,9 @@ public class ImSensitiveWordController extends BaseController {
     public  R<Void> switchEnabled(@Validated(EditGroup.class) @RequestBody ImSensitiveWordBo bo){
         return toAjax(imSensitiveWordService.setEnable(bo));
 
+    }
+
+    public ImSensitiveWordController(IImSensitiveWordService imSensitiveWordService) {
+        this.imSensitiveWordService = imSensitiveWordService;
     }
 }

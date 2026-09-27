@@ -2,7 +2,6 @@ package org.dromara.im.controller;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.mybatis.core.page.PageQuery;
 import org.dromara.common.mybatis.core.page.TableDataInfo;
@@ -23,7 +22,6 @@ import java.util.Map;
  * @date 2024-12-22
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/im/groupMessage")
 public class ImGroupMessageController extends BaseController {
@@ -62,4 +60,8 @@ public class ImGroupMessageController extends BaseController {
         return R.ok(imGroupMessageService.getDailyGroupMessageCount(days));
     }
 
+
+    public ImGroupMessageController(IImGroupMessageService imGroupMessageService) {
+        this.imGroupMessageService = imGroupMessageService;
+    }
 }

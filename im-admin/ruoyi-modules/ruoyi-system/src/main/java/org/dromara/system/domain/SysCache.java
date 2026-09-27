@@ -1,16 +1,11 @@
 package org.dromara.system.domain;
 
 import org.dromara.common.core.utils.StringUtils;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 /**
  * 缓存信息
  *
  * @author Lion Li
  */
-@Data
-@NoArgsConstructor
 public class SysCache {
 
     /**
@@ -44,4 +39,39 @@ public class SysCache {
         this.cacheValue = cacheValue;
     }
 
+
+    public SysCache() {
+    }
+
+    public String getCacheName() {
+        return cacheName;
+    }
+
+    public void setCacheName(String cacheName) {
+        this.cacheName = cacheName;
+    }
+
+    public String getCacheKey() {
+        return cacheKey;
+    }
+
+    public void setCacheKey(String cacheKey) {
+        this.cacheKey = cacheKey;
+    }
+
+    public String getCacheValue() {
+        return cacheValue;
+    }
+
+    public void setCacheValue(String cacheValue) {
+        this.cacheValue = cacheValue;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 }

@@ -3,7 +3,6 @@ package org.dromara.common.mybatis.handler;
 import cn.hutool.core.annotation.AnnotationUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
-import lombok.extern.slf4j.Slf4j;
 import net.sf.jsqlparser.JSQLParserException;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
@@ -50,8 +49,9 @@ import java.util.function.Function;
  * @author Lion Li
  * @version 3.5.0
  */
-@Slf4j
 public class PlusDataPermissionHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(PlusDataPermissionHandler.class);
+
 
     /**
      * 方法或类(名称) 与 注解的映射关系缓存

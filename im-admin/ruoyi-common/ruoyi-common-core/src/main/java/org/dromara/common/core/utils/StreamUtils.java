@@ -2,9 +2,6 @@ package org.dromara.common.core.utils;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.map.MapUtil;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
@@ -17,8 +14,11 @@ import java.util.stream.Collectors;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class StreamUtils {
+
+    private StreamUtils() {
+    }
+
 
     /**
      * 将collection过滤
@@ -279,5 +279,4 @@ public class StreamUtils {
         }
         return map;
     }
-
 }

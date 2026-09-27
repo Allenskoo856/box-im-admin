@@ -4,8 +4,6 @@ import io.github.linpeilie.annotations.AutoMapper;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.dromara.common.core.constant.RegexConstants;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 import org.dromara.system.domain.SysDictType;
@@ -16,8 +14,6 @@ import org.dromara.system.domain.SysDictType;
  * @author Michelle.Chung
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysDictType.class, reverseConvertGenerate = false)
 public class SysDictTypeBo extends BaseEntity {
 
@@ -47,4 +43,56 @@ public class SysDictTypeBo extends BaseEntity {
     private String remark;
 
 
+
+    public SysDictTypeBo() {
+    }
+
+    public Long getDictId() {
+        return dictId;
+    }
+
+    public void setDictId(Long dictId) {
+        this.dictId = dictId;
+    }
+
+    public String getDictName() {
+        return dictName;
+    }
+
+    public void setDictName(String dictName) {
+        this.dictName = dictName;
+    }
+
+    public String getDictType() {
+        return dictType;
+    }
+
+    public void setDictType(String dictType) {
+        this.dictType = dictType;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysDictTypeBo that = (SysDictTypeBo) o;
+        return java.util.Objects.equals(dictId, that.dictId) &&
+               java.util.Objects.equals(dictName, that.dictName) &&
+               java.util.Objects.equals(dictType, that.dictType) &&
+               java.util.Objects.equals(remark, that.remark);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), dictId, dictName, dictType, remark);
+    }
 }

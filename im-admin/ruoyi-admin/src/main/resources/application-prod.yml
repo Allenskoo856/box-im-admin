@@ -27,11 +27,11 @@ spring:
           username: im
           password: M5V8N0d4Rwqpo2gF_
 
-minio:
-  endpoint: http://127.0.0.1:9001 #内网地址
-  domain: https://www.boxim.online/file  #外网访问地址
-  accessKey: admin
-  secretKey: 3fBSt6AkgFuD77D6
+obs:
+  endpoint: https://obs.cn-north-4.myhuaweicloud.com # 华为云 OBS 区域终端节点
+  domain: https://box-im.obs.cn-north-4.myhuaweicloud.com # 外网访问域名或自定义CDN域名
+  accessKey: your-obs-access-key
+  secretKey: your-obs-secret-key
   bucketName: box-im
   imagePath: image
   filePath: file

@@ -6,7 +6,6 @@ import com.fhs.core.trans.anno.Trans;
 import com.fhs.core.trans.constant.TransType;
 import com.fhs.core.trans.vo.TransPojo;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 import org.dromara.im.constant.ImConstant;
 import org.dromara.im.domain.ImGroupMember;
 import org.dromara.im.domain.ImUser;
@@ -22,7 +21,6 @@ import java.util.Date;
  * @author Blue
  * @date 2024-12-22
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = ImGroupMember.class)
 public class ImGroupMemberVo implements TransPojo {
@@ -102,4 +100,103 @@ public class ImGroupMemberVo implements TransPojo {
     @ExcelProperty(value = "群内显示昵称")
     private String showNickName;
 
+
+    public ImGroupMemberVo() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getRemarkNickName() {
+        return remarkNickName;
+    }
+
+    public void setRemarkNickName(String remarkNickName) {
+        this.remarkNickName = remarkNickName;
+    }
+
+    public String getHeadImage() {
+        return headImage;
+    }
+
+    public void setHeadImage(String headImage) {
+        this.headImage = headImage;
+    }
+
+    public String getRemarkGroupName() {
+        return remarkGroupName;
+    }
+
+    public void setRemarkGroupName(String remarkGroupName) {
+        this.remarkGroupName = remarkGroupName;
+    }
+
+    public Long getQuit() {
+        return quit;
+    }
+
+    public void setQuit(Long quit) {
+        this.quit = quit;
+    }
+
+    public Date getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public Date getQuitTime() {
+        return quitTime;
+    }
+
+    public void setQuitTime(Date quitTime) {
+        this.quitTime = quitTime;
+    }
+
+    public String getUserNickName() {
+        return userNickName;
+    }
+
+    public void setUserNickName(String userNickName) {
+        this.userNickName = userNickName;
+    }
+
+    public String getShowNickName() {
+        return showNickName;
+    }
+
+    public void setShowNickName(String showNickName) {
+        this.showNickName = showNickName;
+    }
 }

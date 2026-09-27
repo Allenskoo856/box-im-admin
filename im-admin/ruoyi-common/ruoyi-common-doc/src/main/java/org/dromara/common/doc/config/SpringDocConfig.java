@@ -4,7 +4,6 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.Paths;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.doc.config.properties.SpringDocProperties;
 import org.dromara.common.doc.handler.OpenApiHandler;
@@ -34,7 +33,6 @@ import java.util.Set;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @AutoConfiguration(before = SpringDocConfiguration.class)
 @EnableConfigurationProperties(SpringDocProperties.class)
 @ConditionalOnProperty(name = "springdoc.api-docs.enabled", havingValue = "true", matchIfMissing = true)
@@ -123,4 +121,8 @@ public class SpringDocConfig {
         }
     }
 
+
+    public SpringDocConfig(ServerProperties serverProperties) {
+        this.serverProperties = serverProperties;
+    }
 }

@@ -2,7 +2,6 @@ package org.dromara.web.service;
 
 import cn.dev33.satoken.secure.BCrypt;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.domain.model.RegisterBody;
@@ -29,7 +28,6 @@ import org.springframework.stereotype.Service;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysRegisterService {
 
@@ -112,4 +110,10 @@ public class SysRegisterService {
         SpringUtils.context().publishEvent(logininforEvent);
     }
 
+
+    public SysRegisterService(ISysUserService userService, SysUserMapper userMapper, CaptchaProperties captchaProperties) {
+        this.userService = userService;
+        this.userMapper = userMapper;
+        this.captchaProperties = captchaProperties;
+    }
 }

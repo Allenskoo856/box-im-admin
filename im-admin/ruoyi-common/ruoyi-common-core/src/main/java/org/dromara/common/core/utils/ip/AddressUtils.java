@@ -3,18 +3,18 @@ package org.dromara.common.core.utils.ip;
 import cn.hutool.core.net.NetUtil;
 import cn.hutool.http.HtmlUtil;
 import org.dromara.common.core.utils.StringUtils;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * 获取地址类
  *
  * @author Lion Li
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AddressUtils {
+
+    private AddressUtils() {
+    }
+
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AddressUtils.class);
+
 
     // 未知地址
     public static final String UNKNOWN = "XX XX";

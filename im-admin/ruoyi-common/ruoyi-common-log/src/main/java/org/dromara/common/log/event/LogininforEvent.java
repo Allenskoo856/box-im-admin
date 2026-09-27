@@ -1,7 +1,5 @@
 package org.dromara.common.log.event;
 
-import lombok.Data;
-
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.Serial;
@@ -13,7 +11,6 @@ import java.io.Serializable;
  * @author Lion Li
  */
 
-@Data
 public class LogininforEvent implements Serializable {
 
     @Serial
@@ -49,4 +46,55 @@ public class LogininforEvent implements Serializable {
      */
     private Object[] args;
 
+
+    public LogininforEvent() {
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public HttpServletRequest getRequest() {
+        return request;
+    }
+
+    public void setRequest(HttpServletRequest request) {
+        this.request = request;
+    }
+
+    public Object[] getArgs() {
+        return args;
+    }
+
+    public void setArgs(Object[] args) {
+        this.args = args;
+    }
 }

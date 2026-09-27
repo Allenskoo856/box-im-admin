@@ -3,9 +3,6 @@ package org.dromara.common.core.utils;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Validator;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.util.Set;
 
 /**
@@ -13,8 +10,11 @@ import java.util.Set;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ValidatorUtils {
+
+    private ValidatorUtils() {
+    }
+
 
     private static final Validator VALID = SpringUtils.getBean(Validator.class);
 

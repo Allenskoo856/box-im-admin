@@ -6,7 +6,6 @@ import com.fhs.core.trans.anno.Trans;
 import com.fhs.core.trans.constant.TransType;
 import com.fhs.core.trans.vo.TransPojo;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 import org.dromara.im.constant.ImConstant;
 import org.dromara.im.domain.ImPrivateMessage;
 import org.dromara.im.domain.ImUser;
@@ -21,7 +20,6 @@ import java.util.Date;
  * @author Blue
  * @date 2024-12-22
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = ImPrivateMessage.class)
 public class ImPrivateMessageVo implements TransPojo {
@@ -74,4 +72,79 @@ public class ImPrivateMessageVo implements TransPojo {
     @ExcelProperty(value = "发送时间")
     private Date sendTime;
 
+
+    public ImPrivateMessageVo() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getSendId() {
+        return sendId;
+    }
+
+    public void setSendId(Long sendId) {
+        this.sendId = sendId;
+    }
+
+    public String getSendUserName() {
+        return sendUserName;
+    }
+
+    public void setSendUserName(String sendUserName) {
+        this.sendUserName = sendUserName;
+    }
+
+    public Long getRecvId() {
+        return recvId;
+    }
+
+    public void setRecvId(Long recvId) {
+        this.recvId = recvId;
+    }
+
+    public String getRecvUserName() {
+        return recvUserName;
+    }
+
+    public void setRecvUserName(String recvUserName) {
+        this.recvUserName = recvUserName;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
 }

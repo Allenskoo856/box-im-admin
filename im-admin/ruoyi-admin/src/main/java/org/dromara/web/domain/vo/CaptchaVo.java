@@ -1,13 +1,10 @@
 package org.dromara.web.domain.vo;
 
-import lombok.Data;
-
 /**
  * 验证码信息
  *
  * @author Michelle.Chung
  */
-@Data
 public class CaptchaVo {
 
     /**
@@ -22,4 +19,35 @@ public class CaptchaVo {
      */
     private String img;
 
+
+    public CaptchaVo() {
+    }
+
+    public Boolean getCaptchaEnabled() {
+        return captchaEnabled;
+    }
+
+    public Boolean isCaptchaEnabled() {
+        return captchaEnabled;
+    }
+
+    public void setCaptchaEnabled(Boolean captchaEnabled) {
+        this.captchaEnabled = captchaEnabled;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
 }

@@ -2,7 +2,6 @@ package org.dromara.system.controller.monitor;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.CacheConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.excel.utils.ExcelUtil;
@@ -26,7 +25,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/monitor/logininfor")
 public class SysLogininforController extends BaseController {
@@ -86,4 +84,8 @@ public class SysLogininforController extends BaseController {
         return R.ok();
     }
 
+
+    public SysLogininforController(ISysLogininforService logininforService) {
+        this.logininforService = logininforService;
+    }
 }

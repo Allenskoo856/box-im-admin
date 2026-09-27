@@ -1,13 +1,10 @@
 package org.dromara.system.domain.vo;
 
-import lombok.Data;
-
 /**
  * 用户头像信息
  *
  * @author Michelle.Chung
  */
-@Data
 public class AvatarVo {
 
     /**
@@ -15,4 +12,15 @@ public class AvatarVo {
      */
     private String imgUrl;
 
+
+    public AvatarVo() {
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 }

@@ -6,8 +6,6 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.constant.TenantConstants;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.model.LoginUser;
@@ -27,8 +25,11 @@ import java.util.Set;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LoginHelper {
+
+    private LoginHelper() {
+    }
+
 
     public static final String LOGIN_USER_KEY = "loginUser";
     public static final String TENANT_KEY = "tenantId";

@@ -1,7 +1,5 @@
 package org.dromara.system.domain.vo;
 
-import lombok.Data;
-
 import java.util.List;
 
 /**
@@ -9,7 +7,6 @@ import java.util.List;
  *
  * @author Michelle.Chung
  */
-@Data
 public class SysUserInfoVo {
 
     /**
@@ -37,4 +34,47 @@ public class SysUserInfoVo {
      */
     private List<SysPostVo> posts;
 
+
+    public SysUserInfoVo() {
+    }
+
+    public SysUserVo getUser() {
+        return user;
+    }
+
+    public void setUser(SysUserVo user) {
+        this.user = user;
+    }
+
+    public List<Long> getRoleIds() {
+        return roleIds;
+    }
+
+    public void setRoleIds(List<Long> roleIds) {
+        this.roleIds = roleIds;
+    }
+
+    public List<SysRoleVo> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<SysRoleVo> roles) {
+        this.roles = roles;
+    }
+
+    public List<Long> getPostIds() {
+        return postIds;
+    }
+
+    public void setPostIds(List<Long> postIds) {
+        this.postIds = postIds;
+    }
+
+    public List<SysPostVo> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<SysPostVo> posts) {
+        this.posts = posts;
+    }
 }

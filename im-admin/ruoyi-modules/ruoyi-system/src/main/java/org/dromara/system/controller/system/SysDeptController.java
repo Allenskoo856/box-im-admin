@@ -2,7 +2,6 @@ package org.dromara.system.controller.system;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.hutool.core.convert.Convert;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.utils.StringUtils;
@@ -24,7 +23,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/dept")
 public class SysDeptController extends BaseController {
@@ -137,4 +135,9 @@ public class SysDeptController extends BaseController {
         return R.ok(deptService.selectDeptByIds(deptIds == null ? null : List.of(deptIds)));
     }
 
+
+    public SysDeptController(ISysDeptService deptService, ISysPostService postService) {
+        this.deptService = deptService;
+        this.postService = postService;
+    }
 }

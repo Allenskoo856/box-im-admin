@@ -5,8 +5,6 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 import org.dromara.system.domain.SysDept;
 
@@ -16,8 +14,6 @@ import org.dromara.system.domain.SysDept;
  * @author Michelle.Chung
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysDept.class, reverseConvertGenerate = false)
 public class SysDeptBo extends BaseEntity {
 
@@ -73,4 +69,101 @@ public class SysDeptBo extends BaseEntity {
      */
     private String status;
 
+
+    public SysDeptBo() {
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getDeptCategory() {
+        return deptCategory;
+    }
+
+    public void setDeptCategory(String deptCategory) {
+        this.deptCategory = deptCategory;
+    }
+
+    public Integer getOrderNum() {
+        return orderNum;
+    }
+
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
+    }
+
+    public Long getLeader() {
+        return leader;
+    }
+
+    public void setLeader(Long leader) {
+        this.leader = leader;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysDeptBo that = (SysDeptBo) o;
+        return java.util.Objects.equals(deptId, that.deptId) &&
+               java.util.Objects.equals(parentId, that.parentId) &&
+               java.util.Objects.equals(deptName, that.deptName) &&
+               java.util.Objects.equals(deptCategory, that.deptCategory) &&
+               java.util.Objects.equals(orderNum, that.orderNum) &&
+               java.util.Objects.equals(leader, that.leader) &&
+               java.util.Objects.equals(phone, that.phone) &&
+               java.util.Objects.equals(email, that.email) &&
+               java.util.Objects.equals(status, that.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), deptId, parentId, deptName, deptCategory, orderNum, leader, phone, email, status);
+    }
 }

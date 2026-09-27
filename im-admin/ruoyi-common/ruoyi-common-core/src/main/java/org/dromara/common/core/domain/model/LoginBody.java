@@ -1,8 +1,6 @@
 package org.dromara.common.core.domain.model;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -12,7 +10,6 @@ import java.io.Serializable;
  * @author Lion Li
  */
 
-@Data
 public class LoginBody implements Serializable {
 
     @Serial
@@ -45,4 +42,47 @@ public class LoginBody implements Serializable {
      */
     private String uuid;
 
+
+    public LoginBody() {
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getGrantType() {
+        return grantType;
+    }
+
+    public void setGrantType(String grantType) {
+        this.grantType = grantType;
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 }

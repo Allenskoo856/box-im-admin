@@ -1,7 +1,5 @@
 package org.dromara.common.mybatis.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.dromara.common.core.utils.StringUtils;
 
 /**
@@ -9,8 +7,6 @@ import org.dromara.common.core.utils.StringUtils;
  *
  * @author Lion Li
  */
-@Getter
-@AllArgsConstructor
 public enum DataBaseType {
 
     /**
@@ -54,5 +50,13 @@ public enum DataBaseType {
             }
         }
         return null;
+    }
+
+    DataBaseType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
     }
 }

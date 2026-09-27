@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +15,6 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@Data
 public class BaseEntity implements Serializable {
 
     @Serial
@@ -67,4 +64,63 @@ public class BaseEntity implements Serializable {
     @TableField(exist = false)
     private Map<String, Object> params = new HashMap<>();
 
+
+    public BaseEntity() {
+    }
+
+    public String getSearchValue() {
+        return searchValue;
+    }
+
+    public void setSearchValue(String searchValue) {
+        this.searchValue = searchValue;
+    }
+
+    public Long getCreateDept() {
+        return createDept;
+    }
+
+    public void setCreateDept(Long createDept) {
+        this.createDept = createDept;
+    }
+
+    public Long getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(Long createBy) {
+        this.createBy = createBy;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(Long updateBy) {
+        this.updateBy = updateBy;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Map<String, Object> getParams() {
+        return params;
+    }
+
+    public void setParams(Map<String, Object> params) {
+        this.params = params;
+    }
 }

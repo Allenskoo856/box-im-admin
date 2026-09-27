@@ -3,8 +3,6 @@ package org.dromara.web.service.impl;
 import cn.dev33.satoken.stp.SaLoginModel;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.model.XcxLoginBody;
 import org.dromara.common.core.domain.model.XcxLoginUser;
 import org.dromara.common.core.enums.UserStatus;
@@ -24,10 +22,10 @@ import org.springframework.stereotype.Service;
  *
  * @author Michelle.Chung
  */
-@Slf4j
 @Service("xcx" + IAuthStrategy.BASE_NAME)
-@RequiredArgsConstructor
 public class XcxAuthStrategy implements IAuthStrategy {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(XcxAuthStrategy.class);
+
 
     private final SysLoginService loginService;
 
@@ -89,4 +87,8 @@ public class XcxAuthStrategy implements IAuthStrategy {
         return user;
     }
 
+
+    public XcxAuthStrategy(SysLoginService loginService) {
+        this.loginService = loginService;
+    }
 }

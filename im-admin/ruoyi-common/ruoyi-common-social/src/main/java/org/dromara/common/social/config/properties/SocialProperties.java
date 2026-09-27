@@ -1,6 +1,5 @@
 package org.dromara.common.social.config.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +10,6 @@ import java.util.Map;
  *
  * @author thiszhc
  */
-@Data
 @Component
 @ConfigurationProperties(prefix = "justauth")
 public class SocialProperties {
@@ -21,4 +19,15 @@ public class SocialProperties {
      */
     private Map<String, SocialLoginConfigProperties> type;
 
+
+    public SocialProperties() {
+    }
+
+    public Map<String, SocialLoginConfigProperties> getType() {
+        return type;
+    }
+
+    public void setType(Map<String, SocialLoginConfigProperties> type) {
+        this.type = type;
+    }
 }

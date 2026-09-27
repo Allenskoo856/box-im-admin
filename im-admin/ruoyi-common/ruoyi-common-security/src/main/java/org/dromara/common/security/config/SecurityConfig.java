@@ -8,8 +8,6 @@ import cn.dev33.satoken.router.SaRouter;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.HttpStatus;
 import org.dromara.common.core.utils.ServletUtils;
 import org.dromara.common.core.utils.SpringUtils;
@@ -29,11 +27,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author Lion Li
  */
 
-@Slf4j
 @AutoConfiguration
 @EnableConfigurationProperties(SecurityProperties.class)
-@RequiredArgsConstructor
 public class SecurityConfig implements WebMvcConfigurer {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SecurityConfig.class);
+
 
     private final SecurityProperties securityProperties;
 
@@ -93,4 +91,8 @@ public class SecurityConfig implements WebMvcConfigurer {
         }).setError(e -> SaResult.error(e.getMessage()).setCode(HttpStatus.UNAUTHORIZED));
     }
 
+
+    public SecurityConfig(SecurityProperties securityProperties) {
+        this.securityProperties = securityProperties;
+    }
 }

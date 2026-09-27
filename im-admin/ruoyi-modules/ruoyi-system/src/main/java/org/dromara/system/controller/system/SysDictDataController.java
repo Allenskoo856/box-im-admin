@@ -13,7 +13,6 @@ import org.dromara.system.domain.bo.SysDictDataBo;
 import org.dromara.system.domain.vo.SysDictDataVo;
 import org.dromara.system.service.ISysDictDataService;
 import org.dromara.system.service.ISysDictTypeService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +26,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/dict/data")
 public class SysDictDataController extends BaseController {
@@ -119,5 +117,10 @@ public class SysDictDataController extends BaseController {
     public R<Void> remove(@PathVariable Long[] dictCodes) {
         dictDataService.deleteDictDataByIds(dictCodes);
         return R.ok();
+    }
+
+    public SysDictDataController(ISysDictDataService dictDataService, ISysDictTypeService dictTypeService) {
+        this.dictDataService = dictDataService;
+        this.dictTypeService = dictTypeService;
     }
 }

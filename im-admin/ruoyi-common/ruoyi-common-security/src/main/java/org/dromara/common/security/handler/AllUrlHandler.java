@@ -2,7 +2,6 @@ package org.dromara.common.security.handler;
 
 import cn.hutool.core.util.ReUtil;
 import org.dromara.common.core.utils.SpringUtils;
-import lombok.Data;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
@@ -16,7 +15,6 @@ import java.util.regex.Pattern;
  *
  * @author Lion Li
  */
-@Data
 public class AllUrlHandler implements InitializingBean {
 
     private static final Pattern PATTERN = Pattern.compile("\\{(.*?)\\}");
@@ -36,4 +34,15 @@ public class AllUrlHandler implements InitializingBean {
         urls.addAll(set);
     }
 
+
+    public AllUrlHandler() {
+    }
+
+    public List<String> getUrls() {
+        return urls;
+    }
+
+    public void setUrls(List<String> urls) {
+        this.urls = urls;
+    }
 }

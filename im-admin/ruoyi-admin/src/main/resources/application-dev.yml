@@ -26,11 +26,11 @@ spring:
           username: root
           password: root
 
-minio:
-  endpoint: http://127.0.0.1:9000 #内网地址
-  domain: http://127.0.0.1:9000  #外网访问地址
-  accessKey: minioadmin
-  secretKey: minioadmin
+obs:
+  endpoint: https://obs.cn-north-4.myhuaweicloud.com # 华为云 OBS 区域终端节点
+  domain: https://box-im.obs.cn-north-4.myhuaweicloud.com # 外网访问域名或自定义CDN域名
+  accessKey: your-obs-access-key
+  secretKey: your-obs-secret-key
   bucketName: box-im
   imagePath: image
   filePath: file

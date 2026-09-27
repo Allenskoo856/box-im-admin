@@ -19,7 +19,6 @@ import org.dromara.system.service.ISysTenantPackageService;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +31,6 @@ import java.util.List;
  * @author Michelle.Chung
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/tenant/package")
 @ConditionalOnProperty(value = "tenant.enable", havingValue = "true")
@@ -138,5 +136,9 @@ public class SysTenantPackageController extends BaseController {
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
                           @PathVariable Long[] packageIds) {
         return toAjax(tenantPackageService.deleteWithValidByIds(List.of(packageIds), true));
+    }
+
+    public SysTenantPackageController(ISysTenantPackageService tenantPackageService) {
+        this.tenantPackageService = tenantPackageService;
     }
 }

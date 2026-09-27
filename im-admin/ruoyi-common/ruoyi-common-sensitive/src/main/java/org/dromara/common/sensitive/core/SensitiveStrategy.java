@@ -1,8 +1,6 @@
 package org.dromara.common.sensitive.core;
 
 import cn.hutool.core.util.DesensitizedUtil;
-import lombok.AllArgsConstructor;
-
 import java.util.function.Function;
 
 /**
@@ -11,7 +9,6 @@ import java.util.function.Function;
  * @author Yjoioooo
  * @version 3.6.0
  */
-@AllArgsConstructor
 public enum SensitiveStrategy {
 
     /**
@@ -92,6 +89,10 @@ public enum SensitiveStrategy {
     //可自行添加其他脱敏策略
 
     private final Function<String, String> desensitizer;
+
+    SensitiveStrategy(Function<String, String> desensitizer) {
+        this.desensitizer = desensitizer;
+    }
 
     public Function<String, String> desensitizer() {
         return desensitizer;

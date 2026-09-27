@@ -7,8 +7,6 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.lang.Opt;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.lock.annotation.Lock4j;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.model.AuthUser;
 import org.dromara.common.core.constant.CacheConstants;
 import org.dromara.common.core.constant.Constants;
@@ -44,10 +42,10 @@ import java.util.function.Supplier;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
-@Slf4j
 @Service
 public class SysLoginService {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SysLoginService.class);
+
 
     @Value("${user.password.maxRetryCount}")
     private Integer maxRetryCount;
@@ -243,4 +241,13 @@ public class SysLoginService {
         }
     }
 
+
+    public SysLoginService(ISysTenantService tenantService, ISysPermissionService permissionService, ISysSocialService sysSocialService, ISysRoleService roleService, ISysDeptService deptService, SysUserMapper userMapper) {
+        this.tenantService = tenantService;
+        this.permissionService = permissionService;
+        this.sysSocialService = sysSocialService;
+        this.roleService = roleService;
+        this.deptService = deptService;
+        this.userMapper = userMapper;
+    }
 }

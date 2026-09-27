@@ -2,14 +2,11 @@ package org.dromara.web.domain.vo;
 
 import org.dromara.system.domain.vo.SysTenantVo;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 /**
  * 租户列表
  *
  * @author Lion Li
  */
-@Data
 @AutoMapper(target = SysTenantVo.class)
 public class TenantListVo {
 
@@ -28,4 +25,31 @@ public class TenantListVo {
      */
     private String domain;
 
+
+    public TenantListVo() {
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
 }

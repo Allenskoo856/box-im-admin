@@ -8,10 +8,6 @@ import com.alibaba.excel.metadata.Head;
 import com.alibaba.excel.write.handler.WorkbookWriteHandler;
 import com.alibaba.excel.write.handler.context.WorkbookWriteHandlerContext;
 import com.alibaba.excel.write.merge.AbstractMergeStrategy;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -26,8 +22,9 @@ import java.util.*;
  *
  * @author Lion Li
  */
-@Slf4j
 public class CellMergeStrategy extends AbstractMergeStrategy implements WorkbookWriteHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(CellMergeStrategy.class);
+
 
     private final List<CellRangeAddress> cellList;
     private final boolean hasTitle;
@@ -64,7 +61,6 @@ public class CellMergeStrategy extends AbstractMergeStrategy implements Workbook
         }
     }
 
-    @SneakyThrows
     private List<CellRangeAddress> handle(List<?> list, boolean hasTitle) {
         List<CellRangeAddress> cellList = new ArrayList<>();
         if (CollUtil.isEmpty(list)) {
@@ -145,13 +141,57 @@ public class CellMergeStrategy extends AbstractMergeStrategy implements Workbook
         return isMerge;
     }
 
-    @Data
-    @AllArgsConstructor
     static class RepeatCell {
 
         private Object value;
 
         private int current;
 
+        public RepeatCell(Object value, int current) {
+            this.value = value;
+            this.current = current;
+        }
+
+        public Object getValue() {
+            return value;
+        }
+
+        public void setValue(Object value) {
+            this.value = value;
+        }
+
+        public int getCurrent() {
+            return current;
+        }
+
+        public void setCurrent(int current) {
+            this.current = current;
+        }
+    }
+
+    public CellMergeStrategy(List<CellRangeAddress> cellList, boolean hasTitle, int rowIndex) {
+        this.cellList = cellList;
+        this.hasTitle = hasTitle;
+        this.rowIndex = rowIndex;
+    }
+
+    public List<CellRangeAddress> getCellList() {
+        return cellList;
+    }
+
+    public boolean getHasTitle() {
+        return hasTitle;
+    }
+
+    public boolean isHasTitle() {
+        return hasTitle;
+    }
+
+    public int getRowIndex() {
+        return rowIndex;
+    }
+
+    public void setRowIndex(int rowIndex) {
+        this.rowIndex = rowIndex;
     }
 }

@@ -2,7 +2,6 @@ package org.dromara.common.sms.handler;
 
 import cn.hutool.http.HttpStatus;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.R;
 import org.dromara.sms4j.comm.exception.SmsBlendException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,9 +12,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  *
  * @author AprilWind
  */
-@Slf4j
 @RestControllerAdvice
 public class SmsExceptionHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SmsExceptionHandler.class);
+
 
     /**
      * sms异常

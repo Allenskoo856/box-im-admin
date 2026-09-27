@@ -1,7 +1,5 @@
 package org.dromara.common.redis.utils;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.SpringUtils;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
@@ -11,9 +9,11 @@ import org.springframework.cache.CacheManager;
  *
  * @author Michelle.Chung
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @SuppressWarnings(value = {"unchecked"})
 public class CacheUtils {
+
+    private CacheUtils() {
+    }
 
     private static final CacheManager CACHE_MANAGER = SpringUtils.getBean(CacheManager.class);
 

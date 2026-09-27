@@ -1,15 +1,17 @@
-package org.dromara.common.minio.util;
+package org.dromara.common.obs.util;
 
-import lombok.extern.slf4j.Slf4j;
 import net.coobird.thumbnailator.Thumbnails;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 
-@Slf4j
 public final class ImageUtil {
 
-    //以下是常量,按照阿里代码开发规范,不允许代码中出现魔法值
+    private static final Logger log = LoggerFactory.getLogger(ImageUtil.class);
+
+    // 以下是常量，按照阿里代码开发规范，不允许代码中出现魔法值
     private static final Integer ZERO = 0;
     private static final Integer ONE_ZERO_TWO_FOUR = 1024;
     private static final Integer NINE_ZERO_ZERO = 900;
@@ -19,6 +21,9 @@ public final class ImageUtil {
     private static final Double ZERO_SIX = 0.6;
     private static final Double ZERO_FOUR_FOUR = 0.44;
     private static final Double ZERO_FOUR = 0.4;
+
+    private ImageUtil() {
+    }
 
     /**
      * 根据指定大小压缩图片
@@ -51,7 +56,6 @@ public final class ImageUtil {
         return imageBytes;
     }
 
-
     /**
      * 自动调节精度(经验数值)
      *
@@ -71,8 +75,4 @@ public final class ImageUtil {
         }
         return accuracy;
     }
-
 }
-
-
-

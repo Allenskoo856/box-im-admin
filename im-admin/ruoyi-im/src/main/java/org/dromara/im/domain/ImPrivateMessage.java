@@ -2,8 +2,6 @@ package org.dromara.im.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-
 import java.util.Date;
 
 /**
@@ -12,7 +10,6 @@ import java.util.Date;
  * @author Blue
  * @date 2024-12-22
  */
-@Data
 @TableName("im_private_message")
 public class ImPrivateMessage {
 
@@ -54,4 +51,63 @@ public class ImPrivateMessage {
     private Date sendTime;
 
 
+
+    public ImPrivateMessage() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getSendId() {
+        return sendId;
+    }
+
+    public void setSendId(Long sendId) {
+        this.sendId = sendId;
+    }
+
+    public Long getRecvId() {
+        return recvId;
+    }
+
+    public void setRecvId(Long recvId) {
+        this.recvId = recvId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
 }

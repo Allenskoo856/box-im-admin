@@ -3,17 +3,12 @@ package org.dromara.system.domain;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import org.dromara.common.tenant.core.TenantEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
 /**
  * 参数配置表 sys_config
  *
  * @author Lion Li
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("sys_config")
 public class SysConfig extends TenantEntity {
 
@@ -48,4 +43,74 @@ public class SysConfig extends TenantEntity {
      */
     private String remark;
 
+
+    public SysConfig() {
+    }
+
+    public Long getConfigId() {
+        return configId;
+    }
+
+    public void setConfigId(Long configId) {
+        this.configId = configId;
+    }
+
+    public String getConfigName() {
+        return configName;
+    }
+
+    public void setConfigName(String configName) {
+        this.configName = configName;
+    }
+
+    public String getConfigKey() {
+        return configKey;
+    }
+
+    public void setConfigKey(String configKey) {
+        this.configKey = configKey;
+    }
+
+    public String getConfigValue() {
+        return configValue;
+    }
+
+    public void setConfigValue(String configValue) {
+        this.configValue = configValue;
+    }
+
+    public String getConfigType() {
+        return configType;
+    }
+
+    public void setConfigType(String configType) {
+        this.configType = configType;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysConfig that = (SysConfig) o;
+        return java.util.Objects.equals(configId, that.configId) &&
+               java.util.Objects.equals(configName, that.configName) &&
+               java.util.Objects.equals(configKey, that.configKey) &&
+               java.util.Objects.equals(configValue, that.configValue) &&
+               java.util.Objects.equals(configType, that.configType) &&
+               java.util.Objects.equals(remark, that.remark);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), configId, configName, configKey, configValue, configType, remark);
+    }
 }

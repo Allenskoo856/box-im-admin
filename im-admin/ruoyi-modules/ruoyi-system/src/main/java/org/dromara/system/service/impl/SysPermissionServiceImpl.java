@@ -5,7 +5,6 @@ import org.dromara.common.satoken.utils.LoginHelper;
 import org.dromara.system.service.ISysMenuService;
 import org.dromara.system.service.ISysPermissionService;
 import org.dromara.system.service.ISysRoleService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -16,7 +15,6 @@ import java.util.Set;
  *
  * @author ruoyi
  */
-@RequiredArgsConstructor
 @Service
 public class SysPermissionServiceImpl implements ISysPermissionService {
 
@@ -57,5 +55,10 @@ public class SysPermissionServiceImpl implements ISysPermissionService {
             perms.addAll(menuService.selectMenuPermsByUserId(userId));
         }
         return perms;
+    }
+
+    public SysPermissionServiceImpl(ISysRoleService roleService, ISysMenuService menuService) {
+        this.roleService = roleService;
+        this.menuService = menuService;
     }
 }

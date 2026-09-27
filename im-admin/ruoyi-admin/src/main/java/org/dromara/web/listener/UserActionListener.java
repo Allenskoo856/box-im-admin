@@ -7,8 +7,6 @@ import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.http.useragent.UserAgent;
 import cn.hutool.http.useragent.UserAgentUtil;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.CacheConstants;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.domain.dto.UserOnlineDTO;
@@ -30,10 +28,10 @@ import java.time.Duration;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Component
-@Slf4j
 public class UserActionListener implements SaTokenListener {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(UserActionListener.class);
+
 
     private final SaTokenConfig tokenConfig;
     private final SysLoginService loginService;
@@ -161,5 +159,10 @@ public class UserActionListener implements SaTokenListener {
      */
     @Override
     public void doRenewTimeout(String tokenValue, Object loginId, long timeout) {
+    }
+
+    public UserActionListener(SaTokenConfig tokenConfig, SysLoginService loginService) {
+        this.tokenConfig = tokenConfig;
+        this.loginService = loginService;
     }
 }

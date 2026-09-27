@@ -18,7 +18,6 @@ import org.dromara.system.domain.vo.MenuTreeSelectVo;
 import org.dromara.system.domain.vo.RouterVo;
 import org.dromara.system.domain.vo.SysMenuVo;
 import org.dromara.system.service.ISysMenuService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +29,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/menu")
 public class SysMenuController extends BaseController {
@@ -171,4 +169,8 @@ public class SysMenuController extends BaseController {
         return toAjax(menuService.deleteMenuById(menuId));
     }
 
+
+    public SysMenuController(ISysMenuService menuService) {
+        this.menuService = menuService;
+    }
 }

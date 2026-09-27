@@ -1,7 +1,5 @@
 package org.dromara.system.domain.vo;
 
-import lombok.Data;
-
 import java.util.Set;
 
 /**
@@ -9,7 +7,6 @@ import java.util.Set;
  *
  * @author Michelle.Chung
  */
-@Data
 public class UserInfoVo {
 
     /**
@@ -27,4 +24,31 @@ public class UserInfoVo {
      */
     private Set<String> roles;
 
+
+    public UserInfoVo() {
+    }
+
+    public SysUserVo getUser() {
+        return user;
+    }
+
+    public void setUser(SysUserVo user) {
+        this.user = user;
+    }
+
+    public Set<String> getPermissions() {
+        return permissions;
+    }
+
+    public void setPermissions(Set<String> permissions) {
+        this.permissions = permissions;
+    }
+
+    public Set<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<String> roles) {
+        this.roles = roles;
+    }
 }

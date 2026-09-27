@@ -1,6 +1,5 @@
 package org.dromara.common.ratelimiter.aspectj;
 
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -32,9 +31,10 @@ import java.lang.reflect.Method;
  *
  * @author Lion Li
  */
-@Slf4j
 @Aspect
 public class RateLimiterAspect {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RateLimiterAspect.class);
+
 
     /**
      * 定义spel表达式解析器

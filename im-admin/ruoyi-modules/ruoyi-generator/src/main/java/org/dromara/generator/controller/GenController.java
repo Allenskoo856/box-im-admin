@@ -13,7 +13,6 @@ import org.dromara.common.log.enums.BusinessType;
 import org.dromara.generator.domain.GenTable;
 import org.dromara.generator.domain.GenTableColumn;
 import org.dromara.generator.service.IGenTableService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +28,6 @@ import java.util.Map;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/tool/gen")
 public class GenController extends BaseController {
@@ -213,5 +211,9 @@ public class GenController extends BaseController {
     @GetMapping(value = "/getDataNames")
     public R<Object> getCurrentDataSourceNameList(){
         return R.ok(DataBaseHelper.getDataSourceNameList());
+    }
+
+    public GenController(IGenTableService genTableService) {
+        this.genTableService = genTableService;
     }
 }

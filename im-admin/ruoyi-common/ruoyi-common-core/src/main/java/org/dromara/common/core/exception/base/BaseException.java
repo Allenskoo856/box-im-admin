@@ -1,12 +1,7 @@
 package org.dromara.common.core.exception.base;
 
-import lombok.AllArgsConstructor;
 import org.dromara.common.core.utils.MessageUtils;
 import org.dromara.common.core.utils.StringUtils;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 
 /**
@@ -14,10 +9,6 @@ import java.io.Serial;
  *
  * @author ruoyi
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-@NoArgsConstructor
-@AllArgsConstructor
 public class BaseException extends RuntimeException {
 
     @Serial
@@ -71,4 +62,63 @@ public class BaseException extends RuntimeException {
         return message;
     }
 
+
+    public BaseException(String module, String code, Object[] args, String defaultMessage) {
+        this.module = module;
+        this.code = code;
+        this.args = args;
+        this.defaultMessage = defaultMessage;
+    }
+
+    public BaseException() {
+    }
+
+    public String getModule() {
+        return module;
+    }
+
+    public void setModule(String module) {
+        this.module = module;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public Object[] getArgs() {
+        return args;
+    }
+
+    public void setArgs(Object[] args) {
+        this.args = args;
+    }
+
+    public String getDefaultMessage() {
+        return defaultMessage;
+    }
+
+    public void setDefaultMessage(String defaultMessage) {
+        this.defaultMessage = defaultMessage;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        BaseException that = (BaseException) o;
+        return java.util.Objects.equals(module, that.module) &&
+               java.util.Objects.equals(code, that.code) &&
+               java.util.Objects.equals(args, that.args) &&
+               java.util.Objects.equals(defaultMessage, that.defaultMessage);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), module, code, args, defaultMessage);
+    }
 }

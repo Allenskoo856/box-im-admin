@@ -4,10 +4,6 @@ import com.baomidou.mybatisplus.annotation.*;
 import com.fhs.core.trans.vo.TransPojo;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.tenant.core.TenantEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
 import java.util.Date;
 
 /**
@@ -16,9 +12,6 @@ import java.util.Date;
  * @author Lion Li
  */
 
-@Data
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @TableName("sys_user")
 public class SysUser extends TenantEntity implements TransPojo {
 
@@ -113,4 +106,155 @@ public class SysUser extends TenantEntity implements TransPojo {
         return UserConstants.SUPER_ADMIN_ID.equals(this.userId);
     }
 
+
+    public SysUser() {
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDelFlag() {
+        return delFlag;
+    }
+
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    public String getLoginIp() {
+        return loginIp;
+    }
+
+    public void setLoginIp(String loginIp) {
+        this.loginIp = loginIp;
+    }
+
+    public Date getLoginDate() {
+        return loginDate;
+    }
+
+    public void setLoginDate(Date loginDate) {
+        this.loginDate = loginDate;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysUser that = (SysUser) o;
+        return java.util.Objects.equals(userId, that.userId) &&
+               java.util.Objects.equals(deptId, that.deptId) &&
+               java.util.Objects.equals(userName, that.userName) &&
+               java.util.Objects.equals(nickName, that.nickName) &&
+               java.util.Objects.equals(userType, that.userType) &&
+               java.util.Objects.equals(email, that.email) &&
+               java.util.Objects.equals(phonenumber, that.phonenumber) &&
+               java.util.Objects.equals(sex, that.sex) &&
+               java.util.Objects.equals(avatar, that.avatar) &&
+               java.util.Objects.equals(password, that.password) &&
+               java.util.Objects.equals(status, that.status) &&
+               java.util.Objects.equals(delFlag, that.delFlag) &&
+               java.util.Objects.equals(loginIp, that.loginIp) &&
+               java.util.Objects.equals(loginDate, that.loginDate) &&
+               java.util.Objects.equals(remark, that.remark);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), userId, deptId, userName, nickName, userType, email, phonenumber, sex, avatar, password, status, delFlag, loginIp, loginDate, remark);
+    }
 }

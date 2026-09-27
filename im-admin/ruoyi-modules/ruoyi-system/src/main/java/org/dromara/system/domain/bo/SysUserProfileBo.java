@@ -3,9 +3,6 @@ package org.dromara.system.domain.bo;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.constant.RegexConstants;
 import org.dromara.common.core.xss.Xss;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
@@ -18,9 +15,6 @@ import org.dromara.common.sensitive.core.SensitiveStrategy;
  * @author Michelle.Chung
  */
 
-@Data
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 public class SysUserProfileBo extends BaseEntity {
 
     /**
@@ -50,4 +44,56 @@ public class SysUserProfileBo extends BaseEntity {
      */
     private String sex;
 
+
+    public SysUserProfileBo() {
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysUserProfileBo that = (SysUserProfileBo) o;
+        return java.util.Objects.equals(nickName, that.nickName) &&
+               java.util.Objects.equals(email, that.email) &&
+               java.util.Objects.equals(phonenumber, that.phonenumber) &&
+               java.util.Objects.equals(sex, that.sex);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), nickName, email, phonenumber, sex);
+    }
 }

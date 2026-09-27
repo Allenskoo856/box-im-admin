@@ -2,8 +2,6 @@ package org.dromara.common.mybatis.helper;
 
 import cn.hutool.core.convert.Convert;
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.mybatis.enums.DataBaseType;
@@ -20,8 +18,11 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DataBaseHelper {
+
+    private DataBaseHelper() {
+    }
+
 
     private static final DynamicRoutingDataSource DS = SpringUtils.getBean(DynamicRoutingDataSource.class);
 

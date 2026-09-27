@@ -2,12 +2,12 @@ package ${packageName}.controller;
 
 import java.util.List;
 
-import lombok.RequiredArgsConstructor;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import org.dromara.common.idempotent.annotation.RepeatSubmit;
 import org.dromara.common.log.annotation.Log;
 import org.dromara.common.web.core.BaseController;
@@ -32,12 +32,15 @@ import org.dromara.common.mybatis.core.page.TableDataInfo;
  * @date ${datetime}
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/${moduleName}/${businessName}")
 public class ${ClassName}Controller extends BaseController {
 
     private final I${ClassName}Service ${className}Service;
+
+    public ${ClassName}Controller(I${ClassName}Service ${className}Service) {
+        this.${className}Service = ${className}Service;
+    }
 
     /**
      * 查询${functionName}列表

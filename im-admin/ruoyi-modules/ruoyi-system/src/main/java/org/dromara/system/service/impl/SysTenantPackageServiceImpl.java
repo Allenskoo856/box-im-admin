@@ -5,7 +5,6 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.TenantConstants;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.MapstructUtils;
@@ -31,7 +30,6 @@ import java.util.List;
  *
  * @author Michelle.Chung
  */
-@RequiredArgsConstructor
 @Service
 public class SysTenantPackageServiceImpl implements ISysTenantPackageService {
 
@@ -153,5 +151,10 @@ public class SysTenantPackageServiceImpl implements ISysTenantPackageService {
             }
         }
         return baseMapper.deleteByIds(ids) > 0;
+    }
+
+    public SysTenantPackageServiceImpl(SysTenantPackageMapper baseMapper, SysTenantMapper tenantMapper) {
+        this.baseMapper = baseMapper;
+        this.tenantMapper = tenantMapper;
     }
 }

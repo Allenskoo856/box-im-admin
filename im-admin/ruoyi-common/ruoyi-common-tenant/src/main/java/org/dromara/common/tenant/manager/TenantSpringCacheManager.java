@@ -1,7 +1,6 @@
 package org.dromara.common.tenant.manager;
 
 import com.baomidou.mybatisplus.core.plugins.InterceptorIgnoreHelper;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.redis.manager.PlusSpringCacheManager;
@@ -13,8 +12,9 @@ import org.springframework.cache.Cache;
  *
  * @author Lion Li
  */
-@Slf4j
 public class TenantSpringCacheManager extends PlusSpringCacheManager {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TenantSpringCacheManager.class);
+
 
     public TenantSpringCacheManager() {
     }

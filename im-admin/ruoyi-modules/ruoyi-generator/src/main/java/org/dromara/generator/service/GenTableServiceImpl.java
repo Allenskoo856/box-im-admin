@@ -12,8 +12,6 @@ import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.anyline.metadata.Column;
 import org.anyline.metadata.Table;
 import org.anyline.proxy.ServiceProxy;
@@ -55,10 +53,10 @@ import java.util.zip.ZipOutputStream;
  *
  * @author Lion Li
  */
-@Slf4j
-@RequiredArgsConstructor
 @Service
 public class GenTableServiceImpl implements IGenTableService {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(GenTableServiceImpl.class);
+
 
     private final GenTableMapper baseMapper;
     private final GenTableColumnMapper genTableColumnMapper;
@@ -582,6 +580,12 @@ public class GenTableServiceImpl implements IGenTableService {
             return System.getProperty("user.dir") + File.separator + "src" + File.separator + VelocityUtils.getFileName(template, table);
         }
         return genPath + File.separator + VelocityUtils.getFileName(template, table);
+    }
+
+    public GenTableServiceImpl(GenTableMapper baseMapper, GenTableColumnMapper genTableColumnMapper, IdentifierGenerator identifierGenerator) {
+        this.baseMapper = baseMapper;
+        this.genTableColumnMapper = genTableColumnMapper;
+        this.identifierGenerator = identifierGenerator;
     }
 }
 

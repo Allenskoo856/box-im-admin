@@ -4,7 +4,6 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.system.domain.vo.CacheListInfoVo;
-import lombok.RequiredArgsConstructor;
 import org.redisson.spring.data.connection.RedissonConnectionFactory;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,6 @@ import java.util.*;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/monitor/cache")
 public class CacheController {
@@ -52,4 +50,8 @@ public class CacheController {
         return R.ok(infoVo);
     }
 
+
+    public CacheController(RedissonConnectionFactory connectionFactory) {
+        this.connectionFactory = connectionFactory;
+    }
 }

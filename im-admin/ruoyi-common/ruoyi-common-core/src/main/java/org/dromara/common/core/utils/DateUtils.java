@@ -1,7 +1,5 @@
 package org.dromara.common.core.utils;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.lang.management.ManagementFactory;
@@ -19,8 +17,11 @@ import java.util.Date;
  *
  * @author ruoyi
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
+
+    private DateUtils() {
+    }
+
 
     public static final String YYYY = "yyyy";
 

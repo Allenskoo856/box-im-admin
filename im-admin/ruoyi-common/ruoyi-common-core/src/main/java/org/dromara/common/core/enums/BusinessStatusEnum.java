@@ -1,8 +1,6 @@
 package org.dromara.common.core.enums;
 
 import cn.hutool.core.util.StrUtil;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.StringUtils;
 
@@ -13,8 +11,6 @@ import java.util.Arrays;
  *
  * @author may
  */
-@Getter
-@AllArgsConstructor
 public enum BusinessStatusEnum {
     /**
      * 已撤销
@@ -147,6 +143,19 @@ public enum BusinessStatusEnum {
         } else if (StringUtils.isBlank(status)) {
             throw new ServiceException("流程状态为空！");
         }
+    }
+
+    BusinessStatusEnum(String status, String desc) {
+        this.status = status;
+        this.desc = desc;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 }
 

@@ -1,6 +1,5 @@
 package org.dromara.common.tenant.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.List;
@@ -10,7 +9,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Data
 @ConfigurationProperties(prefix = "tenant")
 public class TenantProperties {
 
@@ -24,4 +22,27 @@ public class TenantProperties {
      */
     private List<String> excludes;
 
+
+    public TenantProperties() {
+    }
+
+    public Boolean getEnable() {
+        return enable;
+    }
+
+    public Boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(Boolean enable) {
+        this.enable = enable;
+    }
+
+    public List<String> getExcludes() {
+        return excludes;
+    }
+
+    public void setExcludes(List<String> excludes) {
+        this.excludes = excludes;
+    }
 }

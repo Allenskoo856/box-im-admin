@@ -3,9 +3,8 @@ package org.dromara.system.controller.system;
 import cn.dev33.satoken.secure.BCrypt;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.io.FileUtil;
-import org.dromara.common.minio.service.FileService;
-import org.dromara.common.minio.vo.UploadImageVO;
-import lombok.RequiredArgsConstructor;
+import org.dromara.common.obs.service.FileService;
+import org.dromara.common.obs.vo.UploadImageVO;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.core.utils.file.MimeTypeUtils;
@@ -36,7 +35,6 @@ import java.util.Arrays;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/user/profile")
 public class SysProfileController extends BaseController {
@@ -44,6 +42,11 @@ public class SysProfileController extends BaseController {
     private final ISysUserService userService;
 
     private final FileService fileService;
+
+    public SysProfileController(ISysUserService userService, FileService fileService) {
+        this.userService = userService;
+        this.fileService = fileService;
+    }
 
     /**
      * 个人信息

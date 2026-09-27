@@ -7,7 +7,6 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StreamUtils;
@@ -36,7 +35,6 @@ import java.util.*;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysMenuServiceImpl implements ISysMenuService {
 
@@ -366,4 +364,11 @@ public class SysMenuServiceImpl implements ISysMenuService {
         }
     }
 
+
+    public SysMenuServiceImpl(SysMenuMapper baseMapper, SysRoleMapper roleMapper, SysRoleMenuMapper roleMenuMapper, SysTenantPackageMapper tenantPackageMapper) {
+        this.baseMapper = baseMapper;
+        this.roleMapper = roleMapper;
+        this.roleMenuMapper = roleMenuMapper;
+        this.tenantPackageMapper = tenantPackageMapper;
+    }
 }

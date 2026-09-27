@@ -1,6 +1,5 @@
 package org.dromara.common.core.config;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @author Lion Li
  */
 
-@Data
 @Component
 @ConfigurationProperties(prefix = "app")
 public class RuoYiConfig {
@@ -30,4 +28,31 @@ public class RuoYiConfig {
      */
     private String copyrightYear;
 
+
+    public RuoYiConfig() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public String getCopyrightYear() {
+        return copyrightYear;
+    }
+
+    public void setCopyrightYear(String copyrightYear) {
+        this.copyrightYear = copyrightYear;
+    }
 }

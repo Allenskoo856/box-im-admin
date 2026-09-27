@@ -6,7 +6,6 @@ import com.fhs.core.trans.anno.Trans;
 import com.fhs.core.trans.constant.TransType;
 import com.fhs.core.trans.vo.TransPojo;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 import org.dromara.im.constant.ImConstant;
 import org.dromara.im.domain.ImGroup;
 import org.dromara.im.domain.ImGroupMessage;
@@ -22,7 +21,6 @@ import java.util.Date;
  * @author Blue
  * @date 2024-12-22
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = ImGroupMessage.class)
 public class ImGroupMessageVo implements TransPojo {
@@ -100,4 +98,119 @@ public class ImGroupMessageVo implements TransPojo {
     @ExcelProperty(value = "是否回执消息")
     private Boolean receipt;
 
+
+    public ImGroupMessageVo() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public Long getSendId() {
+        return sendId;
+    }
+
+    public void setSendId(Long sendId) {
+        this.sendId = sendId;
+    }
+
+    public String getSendUserName() {
+        return sendUserName;
+    }
+
+    public void setSendUserName(String sendUserName) {
+        this.sendUserName = sendUserName;
+    }
+
+    public String getSendNickName() {
+        return sendNickName;
+    }
+
+    public void setSendNickName(String sendNickName) {
+        this.sendNickName = sendNickName;
+    }
+
+    public String getAtUserIds() {
+        return atUserIds;
+    }
+
+    public void setAtUserIds(String atUserIds) {
+        this.atUserIds = atUserIds;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    public Boolean getReceiptOk() {
+        return receiptOk;
+    }
+
+    public Boolean isReceiptOk() {
+        return receiptOk;
+    }
+
+    public void setReceiptOk(Boolean receiptOk) {
+        this.receiptOk = receiptOk;
+    }
+
+    public Boolean getReceipt() {
+        return receipt;
+    }
+
+    public Boolean isReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Boolean receipt) {
+        this.receipt = receipt;
+    }
 }

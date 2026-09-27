@@ -9,20 +9,14 @@
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>ruoyi-common-minio</artifactId>
+    <artifactId>ruoyi-common-obs</artifactId>
 
     <dependencies>
+        <!-- 华为云 OBS SDK -->
         <dependency>
-            <groupId>io.minio</groupId>
-            <artifactId>minio</artifactId>
-            <version>8.5.1</version>
-            <exclusions>
-                <!-- 跟easy-excel的commons-compress版本冲突了 -->
-                <exclusion>
-                    <groupId>org.apache.commons</groupId>
-                    <artifactId>commons-compress</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.huaweicloud</groupId>
+            <artifactId>esdk-obs-java-bundle</artifactId>
+            <version>3.26.6</version>
         </dependency>
         <dependency>
             <groupId>org.dromara</groupId>

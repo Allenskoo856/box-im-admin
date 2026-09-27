@@ -6,8 +6,6 @@ import com.alibaba.excel.annotation.ExcelProperty;
 import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -19,7 +17,6 @@ import java.util.List;
  * @author Michelle.Chung
  * @date 2023-05-15
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysClient.class)
 public class SysClientVo implements Serializable {
@@ -87,4 +84,87 @@ public class SysClientVo implements Serializable {
     private String status;
 
 
+
+    public SysClientVo() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getClientKey() {
+        return clientKey;
+    }
+
+    public void setClientKey(String clientKey) {
+        this.clientKey = clientKey;
+    }
+
+    public String getClientSecret() {
+        return clientSecret;
+    }
+
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
+    }
+
+    public List<String> getGrantTypeList() {
+        return grantTypeList;
+    }
+
+    public void setGrantTypeList(List<String> grantTypeList) {
+        this.grantTypeList = grantTypeList;
+    }
+
+    public String getGrantType() {
+        return grantType;
+    }
+
+    public void setGrantType(String grantType) {
+        this.grantType = grantType;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
+
+    public Long getActiveTimeout() {
+        return activeTimeout;
+    }
+
+    public void setActiveTimeout(Long activeTimeout) {
+        this.activeTimeout = activeTimeout;
+    }
+
+    public Long getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(Long timeout) {
+        this.timeout = timeout;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

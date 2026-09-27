@@ -4,8 +4,6 @@ import io.github.linpeilie.annotations.AutoMapper;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 import org.dromara.system.domain.SysPost;
 
@@ -15,8 +13,6 @@ import org.dromara.system.domain.SysPost;
  * @author Michelle.Chung
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysPost.class, reverseConvertGenerate = false)
 public class SysPostBo extends BaseEntity {
 
@@ -72,4 +68,101 @@ public class SysPostBo extends BaseEntity {
      */
     private String remark;
 
+
+    public SysPostBo() {
+    }
+
+    public Long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public Long getBelongDeptId() {
+        return belongDeptId;
+    }
+
+    public void setBelongDeptId(Long belongDeptId) {
+        this.belongDeptId = belongDeptId;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getPostName() {
+        return postName;
+    }
+
+    public void setPostName(String postName) {
+        this.postName = postName;
+    }
+
+    public String getPostCategory() {
+        return postCategory;
+    }
+
+    public void setPostCategory(String postCategory) {
+        this.postCategory = postCategory;
+    }
+
+    public Integer getPostSort() {
+        return postSort;
+    }
+
+    public void setPostSort(Integer postSort) {
+        this.postSort = postSort;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysPostBo that = (SysPostBo) o;
+        return java.util.Objects.equals(postId, that.postId) &&
+               java.util.Objects.equals(deptId, that.deptId) &&
+               java.util.Objects.equals(belongDeptId, that.belongDeptId) &&
+               java.util.Objects.equals(postCode, that.postCode) &&
+               java.util.Objects.equals(postName, that.postName) &&
+               java.util.Objects.equals(postCategory, that.postCategory) &&
+               java.util.Objects.equals(postSort, that.postSort) &&
+               java.util.Objects.equals(status, that.status) &&
+               java.util.Objects.equals(remark, that.remark);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), postId, deptId, belongDeptId, postCode, postName, postCategory, postSort, status, remark);
+    }
 }

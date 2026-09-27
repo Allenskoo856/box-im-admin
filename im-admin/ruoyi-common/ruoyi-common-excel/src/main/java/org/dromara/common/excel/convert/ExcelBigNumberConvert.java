@@ -8,8 +8,6 @@ import com.alibaba.excel.metadata.GlobalConfiguration;
 import com.alibaba.excel.metadata.data.ReadCellData;
 import com.alibaba.excel.metadata.data.WriteCellData;
 import com.alibaba.excel.metadata.property.ExcelContentProperty;
-import lombok.extern.slf4j.Slf4j;
-
 import java.math.BigDecimal;
 
 /**
@@ -18,8 +16,9 @@ import java.math.BigDecimal;
  *
  * @author Lion Li
  */
-@Slf4j
 public class ExcelBigNumberConvert implements Converter<Long> {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ExcelBigNumberConvert.class);
+
 
     @Override
     public Class<Long> supportJavaTypeKey() {

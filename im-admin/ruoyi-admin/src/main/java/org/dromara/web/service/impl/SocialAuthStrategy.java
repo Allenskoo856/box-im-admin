@@ -7,8 +7,6 @@ import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.http.Method;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
 import org.dromara.common.core.domain.model.LoginUser;
@@ -41,10 +39,10 @@ import java.util.Optional;
  *
  * @author thiszhc is 三三
  */
-@Slf4j
 @Service("social" + IAuthStrategy.BASE_NAME)
-@RequiredArgsConstructor
 public class SocialAuthStrategy implements IAuthStrategy {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SocialAuthStrategy.class);
+
 
     private final SocialProperties socialProperties;
     private final ISysSocialService sysSocialService;
@@ -128,4 +126,11 @@ public class SocialAuthStrategy implements IAuthStrategy {
         return user;
     }
 
+
+    public SocialAuthStrategy(SocialProperties socialProperties, ISysSocialService sysSocialService, SysUserMapper userMapper, SysLoginService loginService) {
+        this.socialProperties = socialProperties;
+        this.sysSocialService = sysSocialService;
+        this.userMapper = userMapper;
+        this.loginService = loginService;
+    }
 }

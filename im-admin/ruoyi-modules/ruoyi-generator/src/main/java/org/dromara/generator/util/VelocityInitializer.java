@@ -1,8 +1,6 @@
 package org.dromara.generator.util;
 
 import org.dromara.common.core.constant.Constants;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.apache.velocity.app.Velocity;
 
 import java.util.Properties;
@@ -12,8 +10,11 @@ import java.util.Properties;
  *
  * @author ruoyi
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class VelocityInitializer {
+
+    private VelocityInitializer() {
+    }
+
 
     /**
      * 初始化vm方法
@@ -31,5 +32,4 @@ public class VelocityInitializer {
             throw new RuntimeException(e);
         }
     }
-
 }

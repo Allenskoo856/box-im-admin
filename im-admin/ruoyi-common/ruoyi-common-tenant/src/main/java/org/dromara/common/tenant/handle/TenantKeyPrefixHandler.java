@@ -1,7 +1,6 @@
 package org.dromara.common.tenant.handle;
 
 import com.baomidou.mybatisplus.core.plugins.InterceptorIgnoreHelper;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.redis.handler.KeyPrefixHandler;
@@ -12,8 +11,9 @@ import org.dromara.common.tenant.helper.TenantHelper;
  *
  * @author Lion Li
  */
-@Slf4j
 public class TenantKeyPrefixHandler extends KeyPrefixHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TenantKeyPrefixHandler.class);
+
 
     public TenantKeyPrefixHandler(String keyPrefix) {
         super(keyPrefix);

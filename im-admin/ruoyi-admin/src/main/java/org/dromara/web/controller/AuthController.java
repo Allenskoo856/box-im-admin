@@ -6,8 +6,6 @@ import cn.hutool.core.codec.Base64;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
 import me.zhyd.oauth.request.AuthRequest;
@@ -56,12 +54,12 @@ import java.util.concurrent.TimeUnit;
  *
  * @author Lion Li
  */
-@Slf4j
 @SaIgnore
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AuthController.class);
+
 
     private final SocialProperties socialProperties;
     private final SysLoginService loginService;
@@ -231,4 +229,15 @@ public class AuthController {
         return R.ok(result);
     }
 
+
+    public AuthController(SocialProperties socialProperties, SysLoginService loginService, SysRegisterService registerService, ISysConfigService configService, ISysTenantService tenantService, ISysSocialService socialUserService, ISysClientService clientService, ScheduledExecutorService scheduledExecutorService) {
+        this.socialProperties = socialProperties;
+        this.loginService = loginService;
+        this.registerService = registerService;
+        this.configService = configService;
+        this.tenantService = tenantService;
+        this.socialUserService = socialUserService;
+        this.clientService = clientService;
+        this.scheduledExecutorService = scheduledExecutorService;
+    }
 }

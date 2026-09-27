@@ -11,8 +11,6 @@ import org.dromara.common.tenant.core.TenantEntity;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 #end
 import com.baomidou.mybatisplus.annotation.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 #foreach ($import in $importList)
 import ${import};
 #end
@@ -30,8 +28,6 @@ import java.io.Serial;
 #else
 #set($Entity="BaseEntity")
 #end
-@Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("${tableName}")
 public class ${ClassName} extends ${Entity} {
 
@@ -57,4 +53,17 @@ public class ${ClassName} extends ${Entity} {
 #end
 #end
 
+#foreach ($column in $columns)
+#if(!$table.isSuperColumn($column.javaField))
+#set($AttrName=$column.javaField.substring(0,1).toUpperCase() + ${column.javaField.substring(1)})
+    public $column.javaType get${AttrName}() {
+        return this.$column.javaField;
+    }
+
+    public void set${AttrName}($column.javaType $column.javaField) {
+        this.$column.javaField = $column.javaField;
+    }
+
+#end
+#end
 }

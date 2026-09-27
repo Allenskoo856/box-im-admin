@@ -1,7 +1,6 @@
 package org.dromara.common.core.config;
 
 import jakarta.annotation.PreDestroy;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.dromara.common.core.config.properties.ThreadPoolProperties;
 import org.dromara.common.core.utils.Threads;
@@ -20,10 +19,11 @@ import java.util.concurrent.ThreadPoolExecutor;
  *
  * @author Lion Li
  **/
-@Slf4j
 @AutoConfiguration
 @EnableConfigurationProperties(ThreadPoolProperties.class)
 public class ThreadPoolConfig {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ThreadPoolConfig.class);
+
 
     /**
      * 核心线程数 = cpu 核心数 + 1

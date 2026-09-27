@@ -3,7 +3,6 @@ package org.dromara.common.mybatis.handler;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpStatus;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.dromara.common.core.domain.model.LoginUser;
 import org.dromara.common.core.exception.ServiceException;
@@ -18,8 +17,9 @@ import java.util.Date;
  * @author Lion Li
  * @date 2021/4/25
  */
-@Slf4j
 public class InjectionMetaObjectHandler implements MetaObjectHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(InjectionMetaObjectHandler.class);
+
 
     /**
      * 插入填充方法，用于在插入数据时自动填充实体对象中的创建时间、更新时间、创建人、更新人等信息

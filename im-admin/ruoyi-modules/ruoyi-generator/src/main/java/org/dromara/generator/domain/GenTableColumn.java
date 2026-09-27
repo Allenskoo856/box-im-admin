@@ -6,8 +6,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.apache.ibatis.type.JdbcType;
 
 import jakarta.validation.constraints.NotBlank;
@@ -17,8 +15,6 @@ import jakarta.validation.constraints.NotBlank;
  *
  * @author Lion Li
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("gen_table_column")
 public class GenTableColumn extends BaseEntity {
 
@@ -218,5 +214,211 @@ public class GenTableColumn extends BaseEntity {
         } else {
             return this.columnComment;
         }
+    }
+
+    public GenTableColumn() {
+    }
+
+    public Long getColumnId() {
+        return columnId;
+    }
+
+    public void setColumnId(Long columnId) {
+        this.columnId = columnId;
+    }
+
+    public Long getTableId() {
+        return tableId;
+    }
+
+    public void setTableId(Long tableId) {
+        this.tableId = tableId;
+    }
+
+    public String getColumnName() {
+        return columnName;
+    }
+
+    public void setColumnName(String columnName) {
+        this.columnName = columnName;
+    }
+
+    public String getColumnComment() {
+        return columnComment;
+    }
+
+    public void setColumnComment(String columnComment) {
+        this.columnComment = columnComment;
+    }
+
+    public String getColumnType() {
+        return columnType;
+    }
+
+    public void setColumnType(String columnType) {
+        this.columnType = columnType;
+    }
+
+    public String getJavaType() {
+        return javaType;
+    }
+
+    public void setJavaType(String javaType) {
+        this.javaType = javaType;
+    }
+
+    public String getJavaField() {
+        return javaField;
+    }
+
+    public void setJavaField(String javaField) {
+        this.javaField = javaField;
+    }
+
+    public String getIsPk() {
+        return isPk;
+    }
+
+    public void setIsPk(String isPk) {
+        this.isPk = isPk;
+    }
+
+    public void setPk(String isPk) {
+        this.isPk = isPk;
+    }
+
+    public String getIsIncrement() {
+        return isIncrement;
+    }
+
+    public void setIsIncrement(String isIncrement) {
+        this.isIncrement = isIncrement;
+    }
+
+    public void setIncrement(String isIncrement) {
+        this.isIncrement = isIncrement;
+    }
+
+    public String getIsRequired() {
+        return isRequired;
+    }
+
+    public void setIsRequired(String isRequired) {
+        this.isRequired = isRequired;
+    }
+
+    public void setRequired(String isRequired) {
+        this.isRequired = isRequired;
+    }
+
+    public String getIsInsert() {
+        return isInsert;
+    }
+
+    public void setIsInsert(String isInsert) {
+        this.isInsert = isInsert;
+    }
+
+    public void setInsert(String isInsert) {
+        this.isInsert = isInsert;
+    }
+
+    public String getIsEdit() {
+        return isEdit;
+    }
+
+    public void setIsEdit(String isEdit) {
+        this.isEdit = isEdit;
+    }
+
+    public void setEdit(String isEdit) {
+        this.isEdit = isEdit;
+    }
+
+    public String getIsList() {
+        return isList;
+    }
+
+    public void setIsList(String isList) {
+        this.isList = isList;
+    }
+
+    public void setList(String isList) {
+        this.isList = isList;
+    }
+
+    public String getIsQuery() {
+        return isQuery;
+    }
+
+    public void setIsQuery(String isQuery) {
+        this.isQuery = isQuery;
+    }
+
+    public void setQuery(String isQuery) {
+        this.isQuery = isQuery;
+    }
+
+    public String getQueryType() {
+        return queryType;
+    }
+
+    public void setQueryType(String queryType) {
+        this.queryType = queryType;
+    }
+
+    public String getHtmlType() {
+        return htmlType;
+    }
+
+    public void setHtmlType(String htmlType) {
+        this.htmlType = htmlType;
+    }
+
+    public String getDictType() {
+        return dictType;
+    }
+
+    public void setDictType(String dictType) {
+        this.dictType = dictType;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        GenTableColumn that = (GenTableColumn) o;
+        return java.util.Objects.equals(columnId, that.columnId) &&
+               java.util.Objects.equals(tableId, that.tableId) &&
+               java.util.Objects.equals(columnName, that.columnName) &&
+               java.util.Objects.equals(columnComment, that.columnComment) &&
+               java.util.Objects.equals(columnType, that.columnType) &&
+               java.util.Objects.equals(javaType, that.javaType) &&
+               java.util.Objects.equals(javaField, that.javaField) &&
+               java.util.Objects.equals(isPk, that.isPk) &&
+               java.util.Objects.equals(isIncrement, that.isIncrement) &&
+               java.util.Objects.equals(isRequired, that.isRequired) &&
+               java.util.Objects.equals(isInsert, that.isInsert) &&
+               java.util.Objects.equals(isEdit, that.isEdit) &&
+               java.util.Objects.equals(isList, that.isList) &&
+               java.util.Objects.equals(isQuery, that.isQuery) &&
+               java.util.Objects.equals(queryType, that.queryType) &&
+               java.util.Objects.equals(htmlType, that.htmlType) &&
+               java.util.Objects.equals(dictType, that.dictType) &&
+               java.util.Objects.equals(sort, that.sort);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), columnId, tableId, columnName, columnComment, columnType, javaType, javaField, isPk, isIncrement, isRequired, isInsert, isEdit, isList, isQuery, queryType, htmlType, dictType, sort);
     }
 }

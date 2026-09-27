@@ -1,7 +1,5 @@
 package org.dromara.common.redis.config.properties;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.redisson.config.ReadMode;
 import org.redisson.config.SubscriptionMode;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,7 +9,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *
  * @author Lion Li
  */
-@Data
 @ConfigurationProperties(prefix = "redisson")
 public class RedissonProperties {
 
@@ -40,8 +37,6 @@ public class RedissonProperties {
      */
     private ClusterServersConfig clusterServersConfig;
 
-    @Data
-    @NoArgsConstructor
     public static class SingleServerConfig {
 
         /**
@@ -74,10 +69,58 @@ public class RedissonProperties {
          */
         private int subscriptionConnectionPoolSize;
 
+        public SingleServerConfig() {
+        }
+
+        public String getClientName() {
+            return clientName;
+        }
+
+        public void setClientName(String clientName) {
+            this.clientName = clientName;
+        }
+
+        public int getConnectionMinimumIdleSize() {
+            return connectionMinimumIdleSize;
+        }
+
+        public void setConnectionMinimumIdleSize(int connectionMinimumIdleSize) {
+            this.connectionMinimumIdleSize = connectionMinimumIdleSize;
+        }
+
+        public int getConnectionPoolSize() {
+            return connectionPoolSize;
+        }
+
+        public void setConnectionPoolSize(int connectionPoolSize) {
+            this.connectionPoolSize = connectionPoolSize;
+        }
+
+        public int getIdleConnectionTimeout() {
+            return idleConnectionTimeout;
+        }
+
+        public void setIdleConnectionTimeout(int idleConnectionTimeout) {
+            this.idleConnectionTimeout = idleConnectionTimeout;
+        }
+
+        public int getTimeout() {
+            return timeout;
+        }
+
+        public void setTimeout(int timeout) {
+            this.timeout = timeout;
+        }
+
+        public int getSubscriptionConnectionPoolSize() {
+            return subscriptionConnectionPoolSize;
+        }
+
+        public void setSubscriptionConnectionPoolSize(int subscriptionConnectionPoolSize) {
+            this.subscriptionConnectionPoolSize = subscriptionConnectionPoolSize;
+        }
     }
 
-    @Data
-    @NoArgsConstructor
     public static class ClusterServersConfig {
 
         /**
@@ -130,6 +173,131 @@ public class RedissonProperties {
          */
         private SubscriptionMode subscriptionMode;
 
+        public ClusterServersConfig() {
+        }
+
+        public String getClientName() {
+            return clientName;
+        }
+
+        public void setClientName(String clientName) {
+            this.clientName = clientName;
+        }
+
+        public int getMasterConnectionMinimumIdleSize() {
+            return masterConnectionMinimumIdleSize;
+        }
+
+        public void setMasterConnectionMinimumIdleSize(int masterConnectionMinimumIdleSize) {
+            this.masterConnectionMinimumIdleSize = masterConnectionMinimumIdleSize;
+        }
+
+        public int getMasterConnectionPoolSize() {
+            return masterConnectionPoolSize;
+        }
+
+        public void setMasterConnectionPoolSize(int masterConnectionPoolSize) {
+            this.masterConnectionPoolSize = masterConnectionPoolSize;
+        }
+
+        public int getSlaveConnectionMinimumIdleSize() {
+            return slaveConnectionMinimumIdleSize;
+        }
+
+        public void setSlaveConnectionMinimumIdleSize(int slaveConnectionMinimumIdleSize) {
+            this.slaveConnectionMinimumIdleSize = slaveConnectionMinimumIdleSize;
+        }
+
+        public int getSlaveConnectionPoolSize() {
+            return slaveConnectionPoolSize;
+        }
+
+        public void setSlaveConnectionPoolSize(int slaveConnectionPoolSize) {
+            this.slaveConnectionPoolSize = slaveConnectionPoolSize;
+        }
+
+        public int getIdleConnectionTimeout() {
+            return idleConnectionTimeout;
+        }
+
+        public void setIdleConnectionTimeout(int idleConnectionTimeout) {
+            this.idleConnectionTimeout = idleConnectionTimeout;
+        }
+
+        public int getTimeout() {
+            return timeout;
+        }
+
+        public void setTimeout(int timeout) {
+            this.timeout = timeout;
+        }
+
+        public int getSubscriptionConnectionPoolSize() {
+            return subscriptionConnectionPoolSize;
+        }
+
+        public void setSubscriptionConnectionPoolSize(int subscriptionConnectionPoolSize) {
+            this.subscriptionConnectionPoolSize = subscriptionConnectionPoolSize;
+        }
+
+        public ReadMode getReadMode() {
+            return readMode;
+        }
+
+        public void setReadMode(ReadMode readMode) {
+            this.readMode = readMode;
+        }
+
+        public SubscriptionMode getSubscriptionMode() {
+            return subscriptionMode;
+        }
+
+        public void setSubscriptionMode(SubscriptionMode subscriptionMode) {
+            this.subscriptionMode = subscriptionMode;
+        }
     }
 
+
+    public RedissonProperties() {
+    }
+
+    public String getKeyPrefix() {
+        return keyPrefix;
+    }
+
+    public void setKeyPrefix(String keyPrefix) {
+        this.keyPrefix = keyPrefix;
+    }
+
+    public int getThreads() {
+        return threads;
+    }
+
+    public void setThreads(int threads) {
+        this.threads = threads;
+    }
+
+    public int getNettyThreads() {
+        return nettyThreads;
+    }
+
+    public void setNettyThreads(int nettyThreads) {
+        this.nettyThreads = nettyThreads;
+    }
+
+    public SingleServerConfig getSingleServerConfig() {
+        return singleServerConfig;
+    }
+
+    public void setSingleServerConfig(SingleServerConfig singleServerConfig) {
+        this.singleServerConfig = singleServerConfig;
+    }
+
+    public ClusterServersConfig getClusterServersConfig() {
+        return clusterServersConfig;
+    }
+
+    public void setClusterServersConfig(ClusterServersConfig clusterServersConfig) {
+        this.clusterServersConfig = clusterServersConfig;
+    }
 }

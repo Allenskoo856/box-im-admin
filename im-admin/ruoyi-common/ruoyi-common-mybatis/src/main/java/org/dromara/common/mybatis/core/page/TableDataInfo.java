@@ -2,9 +2,6 @@ package org.dromara.common.mybatis.core.page;
 
 import cn.hutool.http.HttpStatus;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.List;
@@ -14,8 +11,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@Data
-@NoArgsConstructor
 public class TableDataInfo<T> implements Serializable {
 
     @Serial
@@ -86,4 +81,39 @@ public class TableDataInfo<T> implements Serializable {
         return rspData;
     }
 
+
+    public TableDataInfo() {
+    }
+
+    public long getTotal() {
+        return total;
+    }
+
+    public void setTotal(long total) {
+        this.total = total;
+    }
+
+    public List<T> getRows() {
+        return rows;
+    }
+
+    public void setRows(List<T> rows) {
+        this.rows = rows;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 }

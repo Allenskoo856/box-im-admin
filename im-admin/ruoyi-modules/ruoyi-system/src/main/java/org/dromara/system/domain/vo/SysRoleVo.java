@@ -7,8 +7,6 @@ import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import org.dromara.system.domain.SysRole;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +16,6 @@ import java.util.Date;
  *
  * @author Michelle.Chung
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = SysRole.class)
 public class SysRoleVo implements Serializable {
@@ -97,4 +94,107 @@ public class SysRoleVo implements Serializable {
         return UserConstants.SUPER_ADMIN_ID.equals(this.roleId);
     }
 
+
+    public SysRoleVo() {
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleKey() {
+        return roleKey;
+    }
+
+    public void setRoleKey(String roleKey) {
+        this.roleKey = roleKey;
+    }
+
+    public Integer getRoleSort() {
+        return roleSort;
+    }
+
+    public void setRoleSort(Integer roleSort) {
+        this.roleSort = roleSort;
+    }
+
+    public String getDataScope() {
+        return dataScope;
+    }
+
+    public void setDataScope(String dataScope) {
+        this.dataScope = dataScope;
+    }
+
+    public Boolean getMenuCheckStrictly() {
+        return menuCheckStrictly;
+    }
+
+    public Boolean isMenuCheckStrictly() {
+        return menuCheckStrictly;
+    }
+
+    public void setMenuCheckStrictly(Boolean menuCheckStrictly) {
+        this.menuCheckStrictly = menuCheckStrictly;
+    }
+
+    public Boolean getDeptCheckStrictly() {
+        return deptCheckStrictly;
+    }
+
+    public Boolean isDeptCheckStrictly() {
+        return deptCheckStrictly;
+    }
+
+    public void setDeptCheckStrictly(Boolean deptCheckStrictly) {
+        this.deptCheckStrictly = deptCheckStrictly;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public boolean getFlag() {
+        return flag;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 }

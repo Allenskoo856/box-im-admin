@@ -16,7 +16,6 @@ import org.dromara.system.domain.vo.SysUserVo;
 import org.dromara.system.mapper.SysNoticeMapper;
 import org.dromara.system.mapper.SysUserMapper;
 import org.dromara.system.service.ISysNoticeService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -27,7 +26,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysNoticeServiceImpl implements ISysNoticeService {
 
@@ -120,5 +118,10 @@ public class SysNoticeServiceImpl implements ISysNoticeService {
     @Override
     public int deleteNoticeByIds(Long[] noticeIds) {
         return baseMapper.deleteByIds(Arrays.asList(noticeIds));
+    }
+
+    public SysNoticeServiceImpl(SysNoticeMapper baseMapper, SysUserMapper userMapper) {
+        this.baseMapper = baseMapper;
+        this.userMapper = userMapper;
     }
 }

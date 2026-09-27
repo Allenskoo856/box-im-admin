@@ -1,9 +1,6 @@
 package org.dromara.common.excel.core;
 
 import cn.hutool.core.util.StrUtil;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.exception.ServiceException;
 
 import java.util.ArrayList;
@@ -19,9 +16,6 @@ import java.util.stream.Collectors;
  *
  * @author Emil.Zhang
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 @SuppressWarnings("unused")
 public class DropDownOptions {
     /**
@@ -45,6 +39,9 @@ public class DropDownOptions {
      * 分隔符
      */
     private static final String DELIMITER = "_";
+
+    public DropDownOptions() {
+    }
 
     /**
      * 创建只有一级的下拉选
@@ -145,5 +142,41 @@ public class DropDownOptions {
         parentLinkSonOptions.setNextIndex(sonIndex);
         parentLinkSonOptions.setNextOptions(sonOptions);
         return parentLinkSonOptions;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    public int getNextIndex() {
+        return nextIndex;
+    }
+
+    public void setNextIndex(int nextIndex) {
+        this.nextIndex = nextIndex;
+    }
+
+    public List<String> getOptions() {
+        return options;
+    }
+
+    public void setOptions(List<String> options) {
+        this.options = options;
+    }
+
+    public Map<String, List<String>> getNextOptions() {
+        return nextOptions;
+    }
+
+    public void setNextOptions(Map<String, List<String>> nextOptions) {
+        this.nextOptions = nextOptions;
+    }
+
+    public String getDELIMITER() {
+        return DELIMITER;
     }
 }

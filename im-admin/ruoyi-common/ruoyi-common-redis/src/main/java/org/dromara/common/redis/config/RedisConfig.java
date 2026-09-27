@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.redis.config.properties.RedissonProperties;
 import org.dromara.common.redis.handler.KeyPrefixHandler;
@@ -32,10 +31,11 @@ import java.util.TimeZone;
  *
  * @author Lion Li
  */
-@Slf4j
 @AutoConfiguration
 @EnableConfigurationProperties(RedissonProperties.class)
 public class RedisConfig {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RedisConfig.class);
+
 
     @Autowired
     private RedissonProperties redissonProperties;

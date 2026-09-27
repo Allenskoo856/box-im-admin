@@ -11,8 +11,6 @@ import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.core.utils.reflect.ReflectUtils;
 import org.dromara.common.translation.annotation.Translation;
 import org.dromara.common.translation.core.TranslationInterface;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.util.Map;
 import java.util.Objects;
@@ -23,8 +21,9 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author Lion Li
  */
-@Slf4j
 public class TranslationHandler extends JsonSerializer<Object> implements ContextualSerializer {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TranslationHandler.class);
+
 
     /**
      * 全局翻译实现类映射器

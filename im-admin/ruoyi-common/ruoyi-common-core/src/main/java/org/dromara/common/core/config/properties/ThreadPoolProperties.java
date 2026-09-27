@@ -1,6 +1,5 @@
 package org.dromara.common.core.config.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -8,7 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *
  * @author Lion Li
  */
-@Data
 @ConfigurationProperties(prefix = "thread-pool")
 public class ThreadPoolProperties {
 
@@ -27,4 +25,35 @@ public class ThreadPoolProperties {
      */
     private int keepAliveSeconds;
 
+
+    public ThreadPoolProperties() {
+    }
+
+    public boolean getEnabled() {
+        return enabled;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public int getQueueCapacity() {
+        return queueCapacity;
+    }
+
+    public void setQueueCapacity(int queueCapacity) {
+        this.queueCapacity = queueCapacity;
+    }
+
+    public int getKeepAliveSeconds() {
+        return keepAliveSeconds;
+    }
+
+    public void setKeepAliveSeconds(int keepAliveSeconds) {
+        this.keepAliveSeconds = keepAliveSeconds;
+    }
 }

@@ -16,7 +16,6 @@ import org.dromara.system.domain.bo.SysDictDataBo;
 import org.dromara.system.domain.vo.SysDictDataVo;
 import org.dromara.system.mapper.SysDictDataMapper;
 import org.dromara.system.service.ISysDictDataService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +26,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysDictDataServiceImpl implements ISysDictDataService {
 
@@ -153,4 +151,8 @@ public class SysDictDataServiceImpl implements ISysDictDataService {
         return true;
     }
 
+
+    public SysDictDataServiceImpl(SysDictDataMapper baseMapper) {
+        this.baseMapper = baseMapper;
+    }
 }

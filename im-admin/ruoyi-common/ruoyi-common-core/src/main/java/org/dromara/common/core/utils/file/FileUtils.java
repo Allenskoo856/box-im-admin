@@ -2,9 +2,6 @@ package org.dromara.common.core.utils.file;
 
 import cn.hutool.core.io.FileUtil;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
@@ -13,8 +10,11 @@ import java.nio.charset.StandardCharsets;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class FileUtils extends FileUtil {
+
+    private FileUtils() {
+    }
+
 
     /**
      * 下载文件名重新编码

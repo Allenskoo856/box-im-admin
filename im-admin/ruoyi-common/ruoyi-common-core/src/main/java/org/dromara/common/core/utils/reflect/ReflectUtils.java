@@ -2,9 +2,6 @@ package org.dromara.common.core.utils.reflect;
 
 import cn.hutool.core.util.ReflectUtil;
 import org.dromara.common.core.utils.StringUtils;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.lang.reflect.Method;
 
 /**
@@ -13,8 +10,11 @@ import java.lang.reflect.Method;
  * @author Lion Li
  */
 @SuppressWarnings("rawtypes")
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ReflectUtils extends ReflectUtil {
+
+    private ReflectUtils() {
+    }
+
 
     private static final String SETTER_PREFIX = "set";
 

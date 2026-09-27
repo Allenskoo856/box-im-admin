@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.excel.utils.ExcelUtil;
 import org.dromara.common.log.annotation.Log;
@@ -34,7 +33,6 @@ import java.util.List;
  * @date 2024-12-22
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/im/group")
 public class ImGroupController extends BaseController {
@@ -112,5 +110,10 @@ public class ImGroupController extends BaseController {
     @GetMapping("/totalCount")
     public R<Long> getTotalGroupCount() {
         return R.ok(groupService.getTotalGroupCount());
+    }
+
+    public ImGroupController(IImGroupService groupService, IImGroupMemberService groupMemberService) {
+        this.groupService = groupService;
+        this.groupMemberService = groupMemberService;
     }
 }

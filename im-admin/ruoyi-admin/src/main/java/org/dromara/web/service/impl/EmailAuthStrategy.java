@@ -4,8 +4,6 @@ import cn.dev33.satoken.stp.SaLoginModel;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.domain.model.EmailLoginBody;
@@ -35,10 +33,10 @@ import org.springframework.stereotype.Service;
  *
  * @author Michelle.Chung
  */
-@Slf4j
 @Service("email" + IAuthStrategy.BASE_NAME)
-@RequiredArgsConstructor
 public class EmailAuthStrategy implements IAuthStrategy {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EmailAuthStrategy.class);
+
 
     private final SysLoginService loginService;
     private final SysUserMapper userMapper;
@@ -99,4 +97,9 @@ public class EmailAuthStrategy implements IAuthStrategy {
         return user;
     }
 
+
+    public EmailAuthStrategy(SysLoginService loginService, SysUserMapper userMapper) {
+        this.loginService = loginService;
+        this.userMapper = userMapper;
+    }
 }

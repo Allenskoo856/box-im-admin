@@ -1,17 +1,12 @@
 package org.dromara.common.core.enums;
 
 import org.dromara.common.core.utils.StringUtils;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * 设备类型
  * 针对多套 用户体系
  *
  * @author Lion Li
  */
-@Getter
-@AllArgsConstructor
 public enum UserType {
 
     /**
@@ -33,5 +28,13 @@ public enum UserType {
             }
         }
         throw new RuntimeException("'UserType' not found By " + str);
+    }
+
+    UserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getUserType() {
+        return userType;
     }
 }

@@ -6,8 +6,6 @@ import cn.hutool.captcha.generator.CodeGenerator;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.RandomUtil;
 import jakarta.validation.constraints.NotBlank;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.constant.GlobalConstants;
 import org.dromara.common.core.domain.R;
@@ -41,11 +39,11 @@ import java.util.LinkedHashMap;
  * @author Lion Li
  */
 @SaIgnore
-@Slf4j
 @Validated
-@RequiredArgsConstructor
 @RestController
 public class CaptchaController {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(CaptchaController.class);
+
 
     private final CaptchaProperties captchaProperties;
     private final MailProperties mailProperties;
@@ -133,4 +131,9 @@ public class CaptchaController {
         return R.ok(captchaVo);
     }
 
+
+    public CaptchaController(CaptchaProperties captchaProperties, MailProperties mailProperties) {
+        this.captchaProperties = captchaProperties;
+        this.mailProperties = mailProperties;
+    }
 }

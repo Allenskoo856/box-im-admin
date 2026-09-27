@@ -9,13 +9,10 @@ import com.alibaba.excel.annotation.ExcelProperty;
 import org.dromara.common.excel.annotation.ExcelDictFormat;
 import org.dromara.common.excel.convert.ExcelDictConvert;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
-
-
 
 /**
  * ${functionName}视图对象 ${tableName}
@@ -23,7 +20,6 @@ import java.util.Date;
  * @author ${author}
  * @date ${datetime}
  */
-@Data
 @ExcelIgnoreUnannotated
 @AutoMapper(target = ${ClassName}.class)
 public class ${ClassName}Vo implements Serializable {
@@ -56,4 +52,17 @@ public class ${ClassName}Vo implements Serializable {
 #end
 #end
 
+#foreach ($column in $columns)
+#if($column.list)
+#set($AttrName=$column.javaField.substring(0,1).toUpperCase() + ${column.javaField.substring(1)})
+    public $column.javaType get${AttrName}() {
+        return this.$column.javaField;
+    }
+
+    public void set${AttrName}($column.javaType $column.javaField) {
+        this.$column.javaField = $column.javaField;
+    }
+
+#end
+#end
 }

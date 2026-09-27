@@ -30,8 +30,6 @@
         <lock4j.version>2.2.7</lock4j.version>
         <dynamic-ds.version>4.3.1</dynamic-ds.version>
         <mapstruct-plus.version>1.4.5</mapstruct-plus.version>
-        <mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
-        <lombok.version>1.18.34</lombok.version>
         <bouncycastle.version>1.76</bouncycastle.version>
         <justauth.version>1.16.6</justauth.version>
         <!-- 离线IP地址定位库 -->
@@ -127,12 +125,6 @@
                 <groupId>com.github.therapi</groupId>
                 <artifactId>therapi-runtime-javadoc</artifactId>
                 <version>${therapi-javadoc.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
             </dependency>
 
             <dependency>
@@ -285,7 +277,7 @@
 
             <dependency>
                 <groupId>org.dromara</groupId>
-                <artifactId>ruoyi-common-minio</artifactId>
+                <artifactId>ruoyi-common-obs</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -307,7 +299,6 @@
         <module>ruoyi-common</module>
         <module>ruoyi-modules</module>
         <module>ruoyi-im</module>
-        <module>ruoyi-common/ruoyi-common-minio</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -328,11 +319,6 @@
                             <version>${therapi-javadoc.version}</version>
                         </path>
                         <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
-                        <path>
                             <groupId>org.springframework.boot</groupId>
                             <artifactId>spring-boot-configuration-processor</artifactId>
                             <version>${spring-boot.version}</version>
@@ -341,11 +327,6 @@
                             <groupId>io.github.linpeilie</groupId>
                             <artifactId>mapstruct-plus-processor</artifactId>
                             <version>${mapstruct-plus.version}</version>
-                        </path>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok-mapstruct-binding</artifactId>
-                            <version>${mapstruct-plus.lombok.version}</version>
                         </path>
                     </annotationProcessorPaths>
                     <compilerArgs>

@@ -7,8 +7,6 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.util.LinkedCaseInsensitiveMap;
 import org.springframework.web.context.request.RequestAttributes;
@@ -29,8 +27,11 @@ import java.util.Map;
  *
  * @author ruoyi
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ServletUtils extends JakartaServletUtil {
+
+    private ServletUtils() {
+    }
+
 
     /**
      * 获取String参数
@@ -224,5 +225,4 @@ public class ServletUtils extends JakartaServletUtil {
     public static String urlDecode(String str) {
         return URLDecoder.decode(str, StandardCharsets.UTF_8);
     }
-
 }

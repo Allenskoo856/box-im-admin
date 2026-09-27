@@ -2,8 +2,6 @@ package org.dromara.im.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-
 import java.util.Date;
 
 /**
@@ -12,7 +10,6 @@ import java.util.Date;
  * @author Blue
  * @date 2024-12-22
  */
-@Data
 @TableName("im_group_message")
 public class ImGroupMessage {
 
@@ -72,4 +69,103 @@ public class ImGroupMessage {
      */
     private Boolean receipt;
 
+
+    public ImGroupMessage() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
+    }
+
+    public Long getSendId() {
+        return sendId;
+    }
+
+    public void setSendId(Long sendId) {
+        this.sendId = sendId;
+    }
+
+    public String getSendNickName() {
+        return sendNickName;
+    }
+
+    public void setSendNickName(String sendNickName) {
+        this.sendNickName = sendNickName;
+    }
+
+    public String getAtUserIds() {
+        return atUserIds;
+    }
+
+    public void setAtUserIds(String atUserIds) {
+        this.atUserIds = atUserIds;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getType() {
+        return type;
+    }
+
+    public void setType(Long type) {
+        this.type = type;
+    }
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    public Boolean getReceiptOk() {
+        return receiptOk;
+    }
+
+    public Boolean isReceiptOk() {
+        return receiptOk;
+    }
+
+    public void setReceiptOk(Boolean receiptOk) {
+        this.receiptOk = receiptOk;
+    }
+
+    public Boolean getReceipt() {
+        return receipt;
+    }
+
+    public Boolean isReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Boolean receipt) {
+        this.receipt = receipt;
+    }
 }

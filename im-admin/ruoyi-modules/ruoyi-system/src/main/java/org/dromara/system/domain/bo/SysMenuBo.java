@@ -6,8 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.dromara.common.core.constant.RegexConstants;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 import org.dromara.system.domain.SysMenu;
@@ -18,8 +16,6 @@ import org.dromara.system.domain.SysMenu;
  * @author Michelle.Chung
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysMenu.class, reverseConvertGenerate = false)
 public class SysMenuBo extends BaseEntity {
 
@@ -107,4 +103,163 @@ public class SysMenuBo extends BaseEntity {
      */
     private String remark;
 
+
+    public SysMenuBo() {
+    }
+
+    public Long getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
+
+    public Integer getOrderNum() {
+        return orderNum;
+    }
+
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getComponent() {
+        return component;
+    }
+
+    public void setComponent(String component) {
+        this.component = component;
+    }
+
+    public String getQueryParam() {
+        return queryParam;
+    }
+
+    public void setQueryParam(String queryParam) {
+        this.queryParam = queryParam;
+    }
+
+    public String getIsFrame() {
+        return isFrame;
+    }
+
+    public void setIsFrame(String isFrame) {
+        this.isFrame = isFrame;
+    }
+
+    public void setFrame(String isFrame) {
+        this.isFrame = isFrame;
+    }
+
+    public String getIsCache() {
+        return isCache;
+    }
+
+    public void setIsCache(String isCache) {
+        this.isCache = isCache;
+    }
+
+    public void setCache(String isCache) {
+        this.isCache = isCache;
+    }
+
+    public String getMenuType() {
+        return menuType;
+    }
+
+    public void setMenuType(String menuType) {
+        this.menuType = menuType;
+    }
+
+    public String getVisible() {
+        return visible;
+    }
+
+    public void setVisible(String visible) {
+        this.visible = visible;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getPerms() {
+        return perms;
+    }
+
+    public void setPerms(String perms) {
+        this.perms = perms;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysMenuBo that = (SysMenuBo) o;
+        return java.util.Objects.equals(menuId, that.menuId) &&
+               java.util.Objects.equals(parentId, that.parentId) &&
+               java.util.Objects.equals(menuName, that.menuName) &&
+               java.util.Objects.equals(orderNum, that.orderNum) &&
+               java.util.Objects.equals(path, that.path) &&
+               java.util.Objects.equals(component, that.component) &&
+               java.util.Objects.equals(queryParam, that.queryParam) &&
+               java.util.Objects.equals(isFrame, that.isFrame) &&
+               java.util.Objects.equals(isCache, that.isCache) &&
+               java.util.Objects.equals(menuType, that.menuType) &&
+               java.util.Objects.equals(visible, that.visible) &&
+               java.util.Objects.equals(status, that.status) &&
+               java.util.Objects.equals(perms, that.perms) &&
+               java.util.Objects.equals(icon, that.icon) &&
+               java.util.Objects.equals(remark, that.remark);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), menuId, parentId, menuName, orderNum, path, component, queryParam, isFrame, isCache, menuType, visible, status, perms, icon, remark);
+    }
 }

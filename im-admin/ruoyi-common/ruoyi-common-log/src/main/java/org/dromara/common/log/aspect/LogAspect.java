@@ -6,7 +6,6 @@ import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -36,10 +35,11 @@ import java.util.StringJoiner;
  *
  * @author Lion Li
  */
-@Slf4j
 @Aspect
 @AutoConfiguration
 public class LogAspect {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LogAspect.class);
+
 
     /**
      * 排除敏感属性字段

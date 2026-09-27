@@ -1,7 +1,5 @@
 package org.dromara.web.domain.vo;
 
-import lombok.Data;
-
 import java.util.List;
 
 /**
@@ -9,7 +7,6 @@ import java.util.List;
  *
  * @author Michelle.Chung
  */
-@Data
 public class LoginTenantVo {
 
     /**
@@ -22,4 +19,27 @@ public class LoginTenantVo {
      */
     private List<TenantListVo> voList;
 
+
+    public LoginTenantVo() {
+    }
+
+    public Boolean getTenantEnabled() {
+        return tenantEnabled;
+    }
+
+    public Boolean isTenantEnabled() {
+        return tenantEnabled;
+    }
+
+    public void setTenantEnabled(Boolean tenantEnabled) {
+        this.tenantEnabled = tenantEnabled;
+    }
+
+    public List<TenantListVo> getVoList() {
+        return voList;
+    }
+
+    public void setVoList(List<TenantListVo> voList) {
+        this.voList = voList;
+    }
 }

@@ -11,8 +11,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.CacheNames;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.dto.UserDTO;
@@ -49,10 +47,10 @@ import java.util.Set;
  *
  * @author Lion Li
  */
-@Slf4j
-@RequiredArgsConstructor
 @Service
 public class SysUserServiceImpl implements ISysUserService, UserService {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SysUserServiceImpl.class);
+
 
     private final SysUserMapper baseMapper;
     private final SysDeptMapper deptMapper;
@@ -701,5 +699,14 @@ public class SysUserServiceImpl implements ISysUserService, UserService {
             .eq(SysUser::getStatus, UserConstants.USER_NORMAL)
             .in(SysUser::getDeptId, deptIds));
         return BeanUtil.copyToList(list, UserDTO.class);
+    }
+
+    public SysUserServiceImpl(SysUserMapper baseMapper, SysDeptMapper deptMapper, SysRoleMapper roleMapper, SysPostMapper postMapper, SysUserRoleMapper userRoleMapper, SysUserPostMapper userPostMapper) {
+        this.baseMapper = baseMapper;
+        this.deptMapper = deptMapper;
+        this.roleMapper = roleMapper;
+        this.postMapper = postMapper;
+        this.userRoleMapper = userRoleMapper;
+        this.userPostMapper = userPostMapper;
     }
 }

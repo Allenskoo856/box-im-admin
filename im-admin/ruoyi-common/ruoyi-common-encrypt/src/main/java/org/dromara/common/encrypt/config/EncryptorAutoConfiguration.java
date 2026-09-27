@@ -2,7 +2,6 @@ package org.dromara.common.encrypt.config;
 
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.encrypt.core.EncryptorManager;
 import org.dromara.common.encrypt.interceptor.MybatisDecryptInterceptor;
 import org.dromara.common.encrypt.interceptor.MybatisEncryptInterceptor;
@@ -22,8 +21,9 @@ import org.springframework.context.annotation.Bean;
 @AutoConfiguration(after = MybatisPlusAutoConfiguration.class)
 @EnableConfigurationProperties(EncryptorProperties.class)
 @ConditionalOnProperty(value = "mybatis-encryptor.enable", havingValue = "true")
-@Slf4j
 public class EncryptorAutoConfiguration {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(EncryptorAutoConfiguration.class);
+
 
     @Autowired
     private EncryptorProperties properties;

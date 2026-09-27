@@ -2,7 +2,6 @@ package org.dromara.system.controller.system;
 
 import java.util.List;
 
-import lombok.RequiredArgsConstructor;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
@@ -29,7 +28,6 @@ import org.dromara.common.mybatis.core.page.TableDataInfo;
  * @date 2023-06-18
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/client")
 public class SysClientController extends BaseController {
@@ -111,5 +109,9 @@ public class SysClientController extends BaseController {
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
                           @PathVariable Long[] ids) {
         return toAjax(sysClientService.deleteWithValidByIds(List.of(ids), true));
+    }
+
+    public SysClientController(ISysClientService sysClientService) {
+        this.sysClientService = sysClientService;
     }
 }

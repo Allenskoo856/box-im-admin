@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.CacheNames;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
@@ -30,10 +28,10 @@ import java.util.List;
  * @author Michelle.Chung
  * @date 2023-06-18
  */
-@Slf4j
-@RequiredArgsConstructor
 @Service
 public class SysClientServiceImpl implements ISysClientService {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SysClientServiceImpl.class);
+
 
     private final SysClientMapper baseMapper;
 
@@ -147,5 +145,9 @@ public class SysClientServiceImpl implements ISysClientService {
             //TODO 做一些业务上的校验,判断是否需要校验
         }
         return baseMapper.deleteByIds(ids) > 0;
+    }
+
+    public SysClientServiceImpl(SysClientMapper baseMapper) {
+        this.baseMapper = baseMapper;
     }
 }

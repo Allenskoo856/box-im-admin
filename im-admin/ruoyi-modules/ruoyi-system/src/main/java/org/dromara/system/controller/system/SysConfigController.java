@@ -12,7 +12,6 @@ import org.dromara.system.domain.bo.SysConfigBo;
 import org.dromara.system.domain.vo.SysConfigVo;
 import org.dromara.system.service.ISysConfigService;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +23,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/config")
 public class SysConfigController extends BaseController {
@@ -133,5 +131,9 @@ public class SysConfigController extends BaseController {
     public R<Void> refreshCache() {
         configService.resetConfigCache();
         return R.ok();
+    }
+
+    public SysConfigController(ISysConfigService configService) {
+        this.configService = configService;
     }
 }

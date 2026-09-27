@@ -2,7 +2,6 @@ package org.dromara.generator.config;
 
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;
 import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
-import lombok.extern.slf4j.Slf4j;
 import org.anyline.data.datasource.DataSourceMonitor;
 import org.anyline.data.runtime.DataRuntime;
 import org.anyline.util.ConfigTable;
@@ -21,9 +20,10 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@Slf4j
 @Component
 public class MyBatisDataSourceMonitor implements DataSourceMonitor {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(MyBatisDataSourceMonitor.class);
+
 
     public MyBatisDataSourceMonitor() {
         // 调整执行模式为自定义

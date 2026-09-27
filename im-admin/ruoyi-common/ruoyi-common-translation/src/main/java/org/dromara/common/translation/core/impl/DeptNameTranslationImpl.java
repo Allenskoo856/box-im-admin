@@ -4,14 +4,11 @@ import org.dromara.common.core.service.DeptService;
 import org.dromara.common.translation.annotation.TranslationType;
 import org.dromara.common.translation.constant.TransConstant;
 import org.dromara.common.translation.core.TranslationInterface;
-import lombok.AllArgsConstructor;
-
 /**
  * 部门翻译实现
  *
  * @author Lion Li
  */
-@AllArgsConstructor
 @TranslationType(type = TransConstant.DEPT_ID_TO_NAME)
 public class DeptNameTranslationImpl implements TranslationInterface<String> {
 
@@ -25,5 +22,9 @@ public class DeptNameTranslationImpl implements TranslationInterface<String> {
             return deptService.selectDeptNameByIds(id.toString());
         }
         return null;
+    }
+
+    public DeptNameTranslationImpl(DeptService deptService) {
+        this.deptService = deptService;
     }
 }

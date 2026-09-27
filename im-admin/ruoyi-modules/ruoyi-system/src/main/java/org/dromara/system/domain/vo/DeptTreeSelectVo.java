@@ -1,8 +1,6 @@
 package org.dromara.system.domain.vo;
 
 import cn.hutool.core.lang.tree.Tree;
-import lombok.Data;
-
 import java.util.List;
 
 /**
@@ -10,7 +8,6 @@ import java.util.List;
  *
  * @author Michelle.Chung
  */
-@Data
 public class DeptTreeSelectVo {
 
     /**
@@ -23,4 +20,23 @@ public class DeptTreeSelectVo {
      */
     private List<Tree<Long>> depts;
 
+
+    public DeptTreeSelectVo() {
+    }
+
+    public List<Long> getCheckedKeys() {
+        return checkedKeys;
+    }
+
+    public void setCheckedKeys(List<Long> checkedKeys) {
+        this.checkedKeys = checkedKeys;
+    }
+
+    public List<Tree<Long>> getDepts() {
+        return depts;
+    }
+
+    public void setDepts(List<Tree<Long>> depts) {
+        this.depts = depts;
+    }
 }

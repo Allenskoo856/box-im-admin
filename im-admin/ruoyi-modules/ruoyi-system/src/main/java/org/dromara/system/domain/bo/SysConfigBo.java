@@ -3,8 +3,6 @@ package org.dromara.system.domain.bo;
 import io.github.linpeilie.annotations.AutoMapper;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 import org.dromara.system.domain.SysConfig;
 
@@ -14,8 +12,6 @@ import org.dromara.system.domain.SysConfig;
  * @author Michelle.Chung
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysConfig.class, reverseConvertGenerate = false)
 public class SysConfigBo extends BaseEntity {
 
@@ -56,4 +52,74 @@ public class SysConfigBo extends BaseEntity {
     private String remark;
 
 
+
+    public SysConfigBo() {
+    }
+
+    public Long getConfigId() {
+        return configId;
+    }
+
+    public void setConfigId(Long configId) {
+        this.configId = configId;
+    }
+
+    public String getConfigName() {
+        return configName;
+    }
+
+    public void setConfigName(String configName) {
+        this.configName = configName;
+    }
+
+    public String getConfigKey() {
+        return configKey;
+    }
+
+    public void setConfigKey(String configKey) {
+        this.configKey = configKey;
+    }
+
+    public String getConfigValue() {
+        return configValue;
+    }
+
+    public void setConfigValue(String configValue) {
+        this.configValue = configValue;
+    }
+
+    public String getConfigType() {
+        return configType;
+    }
+
+    public void setConfigType(String configType) {
+        this.configType = configType;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysConfigBo that = (SysConfigBo) o;
+        return java.util.Objects.equals(configId, that.configId) &&
+               java.util.Objects.equals(configName, that.configName) &&
+               java.util.Objects.equals(configKey, that.configKey) &&
+               java.util.Objects.equals(configValue, that.configValue) &&
+               java.util.Objects.equals(configType, that.configType) &&
+               java.util.Objects.equals(remark, that.remark);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), configId, configName, configKey, configValue, configType, remark);
+    }
 }

@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import lombok.AllArgsConstructor;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -24,13 +23,15 @@ import java.time.Duration;
 
 @Configuration
 @EnableCaching
-@AllArgsConstructor
 public class ImCacheConfig extends CachingConfigurerSupport {
 
     public final static String REDIS_CACHE_MANAGER = "redisCacheManager";
 
     private final RedisConnectionFactory factory;
 
+    public ImCacheConfig(RedisConnectionFactory factory) {
+        this.factory = factory;
+    }
 
     @Bean(REDIS_CACHE_MANAGER)
     public CacheManager cacheManager() {
@@ -54,5 +55,4 @@ public class ImCacheConfig extends CachingConfigurerSupport {
         om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return new Jackson2JsonRedisSerializer<>(om, Object.class);
     }
-
 }

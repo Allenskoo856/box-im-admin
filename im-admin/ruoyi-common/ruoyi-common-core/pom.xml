@@ -66,11 +66,6 @@
             <artifactId>hutool-extra</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
         <!--  自动生成YML配置关联JSON文件  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

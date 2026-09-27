@@ -6,8 +6,6 @@ import cn.hutool.http.useragent.UserAgentUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.ServletUtils;
@@ -38,10 +36,10 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
-@Slf4j
 @Service
 public class SysLogininforServiceImpl implements ISysLogininforService {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SysLogininforServiceImpl.class);
+
 
     private final SysLogininforMapper baseMapper;
 
@@ -172,5 +170,10 @@ public class SysLogininforServiceImpl implements ISysLogininforService {
     @Override
     public void cleanLogininfor() {
         baseMapper.delete(new LambdaQueryWrapper<>());
+    }
+
+    public SysLogininforServiceImpl(SysLogininforMapper baseMapper, ISysClientService clientService) {
+        this.baseMapper = baseMapper;
+        this.clientService = clientService;
     }
 }

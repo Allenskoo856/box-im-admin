@@ -2,7 +2,6 @@ package org.dromara.system.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.MapstructUtils;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.system.domain.SysSocial;
@@ -20,7 +19,6 @@ import java.util.List;
  * @author thiszhc
  * @date 2023-06-12
  */
-@RequiredArgsConstructor
 @Service
 public class SysSocialServiceImpl implements ISysSocialService {
 
@@ -109,4 +107,8 @@ public class SysSocialServiceImpl implements ISysSocialService {
         return baseMapper.selectVoList(new LambdaQueryWrapper<SysSocial>().eq(SysSocial::getAuthId, authId));
     }
 
+
+    public SysSocialServiceImpl(SysSocialMapper baseMapper) {
+        this.baseMapper = baseMapper;
+    }
 }

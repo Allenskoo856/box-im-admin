@@ -1,8 +1,5 @@
-package org.dromara.common.minio.enums;
+package org.dromara.common.obs.enums;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public enum FileType {
 
     /**
@@ -23,14 +20,22 @@ public enum FileType {
     AUDIO(3, "声音");
 
     private final Integer code;
-
     private final String desc;
 
+    FileType(Integer code, String desc) {
+        this.code = code;
+        this.desc = desc;
+    }
 
     public Integer code() {
         return this.code;
     }
 
+    public Integer getCode() {
+        return this.code;
+    }
 
+    public String getDesc() {
+        return this.desc;
+    }
 }
-

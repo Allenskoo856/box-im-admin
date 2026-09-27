@@ -1,7 +1,5 @@
 package org.dromara.common.encrypt.enumd;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.dromara.common.encrypt.core.encryptor.*;
 
 /**
@@ -10,8 +8,6 @@ import org.dromara.common.encrypt.core.encryptor.*;
  * @author 老马
  * @version 4.6.0
  */
-@Getter
-@AllArgsConstructor
 public enum AlgorithmType {
 
     /**
@@ -45,4 +41,12 @@ public enum AlgorithmType {
     SM4(Sm4Encryptor.class);
 
     private final Class<? extends AbstractEncryptor> clazz;
+
+    AlgorithmType(Class<? extends AbstractEncryptor> clazz) {
+        this.clazz = clazz;
+    }
+
+    public Class<? extends AbstractEncryptor> getClazz() {
+        return this.clazz;
+    }
 }

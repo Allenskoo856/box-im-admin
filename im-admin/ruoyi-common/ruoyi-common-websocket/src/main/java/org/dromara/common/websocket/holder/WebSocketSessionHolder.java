@@ -1,7 +1,5 @@
 package org.dromara.common.websocket.holder;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.springframework.web.socket.WebSocketSession;
 
 import java.util.Map;
@@ -13,8 +11,11 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author zendwang
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class WebSocketSessionHolder {
+
+    private WebSocketSessionHolder() {
+    }
+
 
     private static final Map<Long, WebSocketSession> USER_SESSION_MAP = new ConcurrentHashMap<>();
 

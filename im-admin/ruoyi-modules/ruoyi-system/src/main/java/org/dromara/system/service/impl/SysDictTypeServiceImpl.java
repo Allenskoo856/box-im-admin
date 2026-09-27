@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.CacheNames;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.service.DictService;
@@ -41,7 +40,6 @@ import java.util.stream.Collectors;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysDictTypeServiceImpl implements ISysDictTypeService, DictService {
 
@@ -255,4 +253,9 @@ public class SysDictTypeServiceImpl implements ISysDictTypeService, DictService 
         return StreamUtils.toMap(list, SysDictDataVo::getDictValue, SysDictDataVo::getDictLabel);
     }
 
+
+    public SysDictTypeServiceImpl(SysDictTypeMapper baseMapper, SysDictDataMapper dictDataMapper) {
+        this.baseMapper = baseMapper;
+        this.dictDataMapper = dictDataMapper;
+    }
 }

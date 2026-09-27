@@ -1,9 +1,5 @@
 package org.dromara.common.core.utils;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.concurrent.*;
 
 /**
@@ -11,9 +7,13 @@ import java.util.concurrent.*;
  *
  * @author ruoyi
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Threads {
+
+    private Threads() {
+    }
+
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(Threads.class);
+
 
     /**
      * sleep等待,单位为毫秒

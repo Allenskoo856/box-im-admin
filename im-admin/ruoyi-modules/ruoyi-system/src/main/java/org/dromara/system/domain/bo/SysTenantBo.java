@@ -4,8 +4,6 @@ import org.dromara.common.core.validate.AddGroup;
 import org.dromara.common.core.validate.EditGroup;
 import org.dromara.system.domain.SysTenant;
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 import jakarta.validation.constraints.*;
 
 import java.util.Date;
@@ -18,8 +16,6 @@ import org.dromara.common.mybatis.core.domain.BaseEntity;
  * @author Michelle.Chung
  */
 
-@Data
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysTenant.class, reverseConvertGenerate = false)
 public class SysTenantBo extends BaseEntity {
 
@@ -111,4 +107,164 @@ public class SysTenantBo extends BaseEntity {
     private String status;
 
 
+
+    public SysTenantBo() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getContactUserName() {
+        return contactUserName;
+    }
+
+    public void setContactUserName(String contactUserName) {
+        this.contactUserName = contactUserName;
+    }
+
+    public String getContactPhone() {
+        return contactPhone;
+    }
+
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLicenseNumber() {
+        return licenseNumber;
+    }
+
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Long getPackageId() {
+        return packageId;
+    }
+
+    public void setPackageId(Long packageId) {
+        this.packageId = packageId;
+    }
+
+    public Date getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Date expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public Long getAccountCount() {
+        return accountCount;
+    }
+
+    public void setAccountCount(Long accountCount) {
+        this.accountCount = accountCount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysTenantBo that = (SysTenantBo) o;
+        return java.util.Objects.equals(id, that.id) &&
+               java.util.Objects.equals(tenantId, that.tenantId) &&
+               java.util.Objects.equals(contactUserName, that.contactUserName) &&
+               java.util.Objects.equals(contactPhone, that.contactPhone) &&
+               java.util.Objects.equals(companyName, that.companyName) &&
+               java.util.Objects.equals(username, that.username) &&
+               java.util.Objects.equals(password, that.password) &&
+               java.util.Objects.equals(licenseNumber, that.licenseNumber) &&
+               java.util.Objects.equals(address, that.address) &&
+               java.util.Objects.equals(domain, that.domain) &&
+               java.util.Objects.equals(intro, that.intro) &&
+               java.util.Objects.equals(remark, that.remark) &&
+               java.util.Objects.equals(packageId, that.packageId) &&
+               java.util.Objects.equals(expireTime, that.expireTime) &&
+               java.util.Objects.equals(accountCount, that.accountCount) &&
+               java.util.Objects.equals(status, that.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), id, tenantId, contactUserName, contactPhone, companyName, username, password, licenseNumber, address, domain, intro, remark, packageId, expireTime, accountCount, status);
+    }
 }

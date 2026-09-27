@@ -6,8 +6,6 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.plugins.IgnoreStrategy;
 import com.baomidou.mybatisplus.core.plugins.InterceptorIgnoreHelper;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.reflect.ReflectUtils;
 
 import java.util.HashMap;
@@ -21,9 +19,11 @@ import java.util.function.Supplier;
  * @author Lion Li
  * @version 3.5.0
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @SuppressWarnings("unchecked cast")
 public class DataPermissionHelper {
+
+    private DataPermissionHelper() {
+    }
 
     private static final String DATA_PERMISSION_KEY = "data:permission";
 

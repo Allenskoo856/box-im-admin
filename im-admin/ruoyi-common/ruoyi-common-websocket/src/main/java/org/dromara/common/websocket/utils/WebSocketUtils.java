@@ -1,9 +1,6 @@
 package org.dromara.common.websocket.utils;
 
 import cn.hutool.core.collection.CollUtil;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.redis.utils.RedisUtils;
 import org.dromara.common.websocket.dto.WebSocketMessageDto;
 import org.dromara.common.websocket.holder.WebSocketSessionHolder;
@@ -24,9 +21,13 @@ import static org.dromara.common.websocket.constant.WebSocketConstants.WEB_SOCKE
  *
  * @author zendwang
  */
-@Slf4j
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class WebSocketUtils {
+
+    private WebSocketUtils() {
+    }
+
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(WebSocketUtils.class);
+
 
     /**
      * 向指定的WebSocket会话发送消息

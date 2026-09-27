@@ -12,8 +12,6 @@ import com.alibaba.excel.write.metadata.fill.FillWrapper;
 import com.alibaba.excel.write.style.column.LongestMatchColumnWidthStyleStrategy;
 import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.core.utils.file.FileUtils;
 import org.dromara.common.excel.convert.ExcelBigNumberConvert;
@@ -32,8 +30,11 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ExcelUtil {
+
+    private ExcelUtil() {
+    }
+
 
     /**
      * 同步导入(适用于小数据量)
@@ -432,5 +433,4 @@ public class ExcelUtil {
     public static String encodingFilename(String filename) {
         return IdUtil.fastSimpleUUID() + "_" + filename + ".xlsx";
     }
-
 }

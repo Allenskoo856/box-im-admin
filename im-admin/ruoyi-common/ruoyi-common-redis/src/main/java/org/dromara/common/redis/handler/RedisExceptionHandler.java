@@ -3,7 +3,6 @@ package org.dromara.common.redis.handler;
 import cn.hutool.http.HttpStatus;
 import com.baomidou.lock.exception.LockFailureException;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 import org.dromara.common.core.domain.R;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -13,9 +12,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  *
  * @author AprilWind
  */
-@Slf4j
 @RestControllerAdvice
 public class RedisExceptionHandler {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RedisExceptionHandler.class);
+
 
     /**
      * 分布式锁Lock4j异常

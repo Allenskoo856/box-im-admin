@@ -4,7 +4,6 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.utils.StreamUtils;
 import org.dromara.common.mybatis.helper.DataBaseHelper;
 import org.dromara.system.domain.SysDept;
@@ -24,7 +23,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service("sdss")
 public class SysDataScopeServiceImpl implements ISysDataScopeService {
 
@@ -74,4 +72,9 @@ public class SysDataScopeServiceImpl implements ISysDataScopeService {
         return "-1";
     }
 
+
+    public SysDataScopeServiceImpl(SysRoleDeptMapper roleDeptMapper, SysDeptMapper deptMapper) {
+        this.roleDeptMapper = roleDeptMapper;
+        this.deptMapper = deptMapper;
+    }
 }

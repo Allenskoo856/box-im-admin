@@ -11,7 +11,6 @@ import org.dromara.common.core.utils.SpringUtils;
 import org.dromara.common.sensitive.annotation.Sensitive;
 import org.dromara.common.sensitive.core.SensitiveService;
 import org.dromara.common.sensitive.core.SensitiveStrategy;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 
 import java.io.IOException;
@@ -22,8 +21,9 @@ import java.util.Objects;
  *
  * @author Yjoioooo
  */
-@Slf4j
 public class SensitiveHandler extends JsonSerializer<String> implements ContextualSerializer {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(SensitiveHandler.class);
+
 
     private SensitiveStrategy strategy;
     private String roleKey;

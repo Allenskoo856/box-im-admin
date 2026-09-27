@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.TenantConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.validate.AddGroup;
@@ -36,7 +35,6 @@ import java.util.List;
  * @author Michelle.Chung
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/tenant")
 @ConditionalOnProperty(value = "tenant.enable", havingValue = "true")
@@ -190,4 +188,8 @@ public class SysTenantController extends BaseController {
         return R.ok("同步租户字典成功");
     }
 
+
+    public SysTenantController(ISysTenantService tenantService) {
+        this.tenantService = tenantService;
+    }
 }

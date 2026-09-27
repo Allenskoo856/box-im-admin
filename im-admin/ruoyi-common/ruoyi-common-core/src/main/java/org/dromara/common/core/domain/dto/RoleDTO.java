@@ -1,8 +1,5 @@
 package org.dromara.common.core.domain.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.io.Serial;
 import java.io.Serializable;
 
@@ -12,8 +9,6 @@ import java.io.Serializable;
  * @author Lion Li
  */
 
-@Data
-@NoArgsConstructor
 public class RoleDTO implements Serializable {
 
     @Serial
@@ -39,4 +34,39 @@ public class RoleDTO implements Serializable {
      */
     private String dataScope;
 
+
+    public RoleDTO() {
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleKey() {
+        return roleKey;
+    }
+
+    public void setRoleKey(String roleKey) {
+        this.roleKey = roleKey;
+    }
+
+    public String getDataScope() {
+        return dataScope;
+    }
+
+    public void setDataScope(String dataScope) {
+        this.dataScope = dataScope;
+    }
 }

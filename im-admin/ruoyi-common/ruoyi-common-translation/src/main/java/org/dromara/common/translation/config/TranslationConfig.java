@@ -6,7 +6,6 @@ import org.dromara.common.translation.core.TranslationInterface;
 import org.dromara.common.translation.core.handler.TranslationBeanSerializerModifier;
 import org.dromara.common.translation.core.handler.TranslationHandler;
 import jakarta.annotation.PostConstruct;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 
@@ -19,9 +18,10 @@ import java.util.Map;
  *
  * @author Lion Li
  */
-@Slf4j
 @AutoConfiguration
 public class TranslationConfig {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(TranslationConfig.class);
+
 
     @Autowired
     private List<TranslationInterface<?>> list;

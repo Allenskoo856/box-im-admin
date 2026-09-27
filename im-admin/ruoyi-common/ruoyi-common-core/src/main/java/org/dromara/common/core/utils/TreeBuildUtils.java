@@ -5,8 +5,6 @@ import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.lang.tree.TreeNodeConfig;
 import cn.hutool.core.lang.tree.TreeUtil;
 import cn.hutool.core.lang.tree.parser.NodeParser;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.utils.reflect.ReflectUtils;
 
 import java.util.List;
@@ -18,8 +16,11 @@ import java.util.stream.Stream;
  *
  * @author Lion Li
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TreeBuildUtils extends TreeUtil {
+
+    private TreeBuildUtils() {
+    }
+
 
     /**
      * 根据前端定制差异化字段

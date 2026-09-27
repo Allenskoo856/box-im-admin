@@ -4,9 +4,6 @@ import io.github.linpeilie.annotations.AutoMapper;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.mybatis.core.domain.BaseEntity;
 import org.dromara.system.domain.SysRole;
@@ -17,9 +14,6 @@ import org.dromara.system.domain.SysRole;
  * @author Michelle.Chung
  */
 
-@Data
-@NoArgsConstructor
-@EqualsAndHashCode(callSuper = true)
 @AutoMapper(target = SysRole.class, reverseConvertGenerate = false)
 public class SysRoleBo extends BaseEntity {
 
@@ -91,4 +85,127 @@ public class SysRoleBo extends BaseEntity {
         return UserConstants.SUPER_ADMIN_ID.equals(this.roleId);
     }
 
+
+    public SysRoleBo() {
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleKey() {
+        return roleKey;
+    }
+
+    public void setRoleKey(String roleKey) {
+        this.roleKey = roleKey;
+    }
+
+    public Integer getRoleSort() {
+        return roleSort;
+    }
+
+    public void setRoleSort(Integer roleSort) {
+        this.roleSort = roleSort;
+    }
+
+    public String getDataScope() {
+        return dataScope;
+    }
+
+    public void setDataScope(String dataScope) {
+        this.dataScope = dataScope;
+    }
+
+    public Boolean getMenuCheckStrictly() {
+        return menuCheckStrictly;
+    }
+
+    public Boolean isMenuCheckStrictly() {
+        return menuCheckStrictly;
+    }
+
+    public void setMenuCheckStrictly(Boolean menuCheckStrictly) {
+        this.menuCheckStrictly = menuCheckStrictly;
+    }
+
+    public Boolean getDeptCheckStrictly() {
+        return deptCheckStrictly;
+    }
+
+    public Boolean isDeptCheckStrictly() {
+        return deptCheckStrictly;
+    }
+
+    public void setDeptCheckStrictly(Boolean deptCheckStrictly) {
+        this.deptCheckStrictly = deptCheckStrictly;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Long[] getMenuIds() {
+        return menuIds;
+    }
+
+    public void setMenuIds(Long[] menuIds) {
+        this.menuIds = menuIds;
+    }
+
+    public Long[] getDeptIds() {
+        return deptIds;
+    }
+
+    public void setDeptIds(Long[] deptIds) {
+        this.deptIds = deptIds;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        SysRoleBo that = (SysRoleBo) o;
+        return java.util.Objects.equals(roleId, that.roleId) &&
+               java.util.Objects.equals(roleName, that.roleName) &&
+               java.util.Objects.equals(roleKey, that.roleKey) &&
+               java.util.Objects.equals(roleSort, that.roleSort) &&
+               java.util.Objects.equals(dataScope, that.dataScope) &&
+               java.util.Objects.equals(menuCheckStrictly, that.menuCheckStrictly) &&
+               java.util.Objects.equals(deptCheckStrictly, that.deptCheckStrictly) &&
+               java.util.Objects.equals(status, that.status) &&
+               java.util.Objects.equals(remark, that.remark) &&
+               java.util.Objects.equals(menuIds, that.menuIds) &&
+               java.util.Objects.equals(deptIds, that.deptIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), roleId, roleName, roleKey, roleSort, dataScope, menuCheckStrictly, deptCheckStrictly, status, remark, menuIds, deptIds);
+    }
 }

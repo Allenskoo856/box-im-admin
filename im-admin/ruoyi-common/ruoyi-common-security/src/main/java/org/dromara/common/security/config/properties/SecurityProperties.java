@@ -1,6 +1,5 @@
 package org.dromara.common.security.config.properties;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -8,7 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *
  * @author Lion Li
  */
-@Data
 @ConfigurationProperties(prefix = "security")
 public class SecurityProperties {
 
@@ -18,4 +16,15 @@ public class SecurityProperties {
     private String[] excludes;
 
 
+
+    public SecurityProperties() {
+    }
+
+    public String[] getExcludes() {
+        return excludes;
+    }
+
+    public void setExcludes(String[] excludes) {
+        this.excludes = excludes;
+    }
 }

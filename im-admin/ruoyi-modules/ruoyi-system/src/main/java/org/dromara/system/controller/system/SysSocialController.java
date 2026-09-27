@@ -1,6 +1,5 @@
 package org.dromara.system.controller.system;
 
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.satoken.utils.LoginHelper;
 import org.dromara.common.web.core.BaseController;
@@ -20,7 +19,6 @@ import java.util.List;
  * @date 2023-06-16
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/social")
 public class SysSocialController extends BaseController {
@@ -35,4 +33,8 @@ public class SysSocialController extends BaseController {
         return R.ok(socialUserService.queryListByUserId(LoginHelper.getUserId()));
     }
 
+
+    public SysSocialController(ISysSocialService socialUserService) {
+        this.socialUserService = socialUserService;
+    }
 }

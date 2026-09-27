@@ -5,7 +5,6 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.dromara.common.json.handler.BigNumberSerializer;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
@@ -22,9 +21,10 @@ import java.util.TimeZone;
  *
  * @author Lion Li
  */
-@Slf4j
 @AutoConfiguration(before = JacksonAutoConfiguration.class)
 public class JacksonConfig {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(JacksonConfig.class);
+
 
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer customizer() {

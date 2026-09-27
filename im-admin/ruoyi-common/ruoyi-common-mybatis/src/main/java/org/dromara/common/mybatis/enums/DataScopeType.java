@@ -1,7 +1,5 @@
 package org.dromara.common.mybatis.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.dromara.common.core.domain.model.LoginUser;
 import org.dromara.common.core.utils.StringUtils;
 import org.dromara.common.mybatis.helper.DataPermissionHelper;
@@ -21,8 +19,6 @@ import org.dromara.common.mybatis.helper.DataPermissionHelper;
  * @author Lion Li
  * @version 3.5.0
  */
-@Getter
-@AllArgsConstructor
 public enum DataScopeType {
 
     /**
@@ -78,5 +74,23 @@ public enum DataScopeType {
             }
         }
         return null;
+    }
+
+    DataScopeType(String code, String sqlTemplate, String elseSql) {
+        this.code = code;
+        this.sqlTemplate = sqlTemplate;
+        this.elseSql = elseSql;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public String getSqlTemplate() {
+        return sqlTemplate;
+    }
+
+    public String getElseSql() {
+        return elseSql;
     }
 }

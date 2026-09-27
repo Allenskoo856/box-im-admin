@@ -7,7 +7,6 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.CacheNames;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.exception.ServiceException;
@@ -41,7 +40,6 @@ import java.util.List;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysDeptServiceImpl implements ISysDeptService, DeptService {
 
@@ -336,4 +334,10 @@ public class SysDeptServiceImpl implements ISysDeptService, DeptService {
         return baseMapper.deleteById(deptId);
     }
 
+
+    public SysDeptServiceImpl(SysDeptMapper baseMapper, SysRoleMapper roleMapper, SysUserMapper userMapper) {
+        this.baseMapper = baseMapper;
+        this.roleMapper = roleMapper;
+        this.userMapper = userMapper;
+    }
 }

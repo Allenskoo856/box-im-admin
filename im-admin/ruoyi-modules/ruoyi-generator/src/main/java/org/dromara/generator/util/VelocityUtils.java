@@ -10,8 +10,6 @@ import org.dromara.common.json.utils.JsonUtils;
 import org.dromara.common.mybatis.helper.DataBaseHelper;
 import org.dromara.generator.domain.GenTable;
 import org.dromara.generator.domain.GenTableColumn;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.apache.velocity.VelocityContext;
 
 import java.util.*;
@@ -21,8 +19,11 @@ import java.util.*;
  *
  * @author ruoyi
  */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class VelocityUtils {
+
+    private VelocityUtils() {
+    }
+
 
     /**
      * 项目空间路径

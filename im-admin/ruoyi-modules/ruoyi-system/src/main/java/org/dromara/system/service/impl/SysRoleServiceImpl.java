@@ -11,7 +11,6 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.TenantConstants;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.model.LoginUser;
@@ -43,7 +42,6 @@ import java.util.*;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @Service
 public class SysRoleServiceImpl implements ISysRoleService {
 
@@ -510,5 +508,12 @@ public class SysRoleServiceImpl implements ISysRoleService {
                 }
             }
         });
+    }
+
+    public SysRoleServiceImpl(SysRoleMapper baseMapper, SysRoleMenuMapper roleMenuMapper, SysUserRoleMapper userRoleMapper, SysRoleDeptMapper roleDeptMapper) {
+        this.baseMapper = baseMapper;
+        this.roleMenuMapper = roleMenuMapper;
+        this.userRoleMapper = userRoleMapper;
+        this.roleDeptMapper = roleDeptMapper;
     }
 }

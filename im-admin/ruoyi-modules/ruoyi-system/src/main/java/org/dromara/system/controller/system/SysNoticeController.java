@@ -1,7 +1,6 @@
 package org.dromara.system.controller.system;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.service.DictService;
 import org.dromara.common.log.annotation.Log;
@@ -22,7 +21,6 @@ import org.springframework.web.bind.annotation.*;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/notice")
 public class SysNoticeController extends BaseController {
@@ -86,5 +84,10 @@ public class SysNoticeController extends BaseController {
     @DeleteMapping("/{noticeIds}")
     public R<Void> remove(@PathVariable Long[] noticeIds) {
         return toAjax(noticeService.deleteNoticeByIds(noticeIds));
+    }
+
+    public SysNoticeController(ISysNoticeService noticeService, DictService dictService) {
+        this.noticeService = noticeService;
+        this.dictService = dictService;
     }
 }

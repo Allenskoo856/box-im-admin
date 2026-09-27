@@ -1,7 +1,6 @@
 package org.dromara.system.domain.vo;
 
 import io.github.linpeilie.annotations.AutoMapper;
-import lombok.Data;
 import org.dromara.system.domain.SysSocial;
 
 import java.io.Serial;
@@ -14,7 +13,6 @@ import java.util.Date;
  *
  * @author thiszhc
  */
-@Data
 @AutoMapper(target = SysSocial.class)
 public class SysSocialVo implements Serializable {
 
@@ -141,4 +139,199 @@ public class SysSocialVo implements Serializable {
      * 创建时间
      */
     private Date createTime;
+
+    public SysSocialVo() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public String getAuthId() {
+        return authId;
+    }
+
+    public void setAuthId(String authId) {
+        this.authId = authId;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public int getExpireIn() {
+        return expireIn;
+    }
+
+    public void setExpireIn(int expireIn) {
+        this.expireIn = expireIn;
+    }
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getAccessCode() {
+        return accessCode;
+    }
+
+    public void setAccessCode(String accessCode) {
+        this.accessCode = accessCode;
+    }
+
+    public String getUnionId() {
+        return unionId;
+    }
+
+    public void setUnionId(String unionId) {
+        this.unionId = unionId;
+    }
+
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
+    public String getTokenType() {
+        return tokenType;
+    }
+
+    public void setTokenType(String tokenType) {
+        this.tokenType = tokenType;
+    }
+
+    public String getIdToken() {
+        return idToken;
+    }
+
+    public void setIdToken(String idToken) {
+        this.idToken = idToken;
+    }
+
+    public String getMacAlgorithm() {
+        return macAlgorithm;
+    }
+
+    public void setMacAlgorithm(String macAlgorithm) {
+        this.macAlgorithm = macAlgorithm;
+    }
+
+    public String getMacKey() {
+        return macKey;
+    }
+
+    public void setMacKey(String macKey) {
+        this.macKey = macKey;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getOauthToken() {
+        return oauthToken;
+    }
+
+    public void setOauthToken(String oauthToken) {
+        this.oauthToken = oauthToken;
+    }
+
+    public String getOauthTokenSecret() {
+        return oauthTokenSecret;
+    }
+
+    public void setOauthTokenSecret(String oauthTokenSecret) {
+        this.oauthTokenSecret = oauthTokenSecret;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }

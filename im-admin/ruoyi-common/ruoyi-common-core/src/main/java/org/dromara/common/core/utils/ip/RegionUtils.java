@@ -5,7 +5,6 @@ import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.ObjectUtil;
 import org.dromara.common.core.exception.ServiceException;
 import org.dromara.common.core.utils.file.FileUtils;
-import lombok.extern.slf4j.Slf4j;
 import org.lionsoul.ip2region.xdb.Searcher;
 
 import java.io.File;
@@ -16,8 +15,9 @@ import java.io.File;
  *
  * @author lishuyan
  */
-@Slf4j
 public class RegionUtils {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(RegionUtils.class);
+
 
     private static final Searcher SEARCHER;
 

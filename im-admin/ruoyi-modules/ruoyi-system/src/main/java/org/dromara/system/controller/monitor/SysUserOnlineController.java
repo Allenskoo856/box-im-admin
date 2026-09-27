@@ -4,7 +4,6 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.bean.BeanUtil;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.CacheConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.core.domain.dto.UserOnlineDTO;
@@ -28,7 +27,6 @@ import java.util.stream.Collectors;
  *
  * @author Lion Li
  */
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/monitor/online")
 public class SysUserOnlineController extends BaseController {

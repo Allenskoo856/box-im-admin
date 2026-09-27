@@ -11,8 +11,6 @@ import com.alibaba.excel.metadata.data.WriteCellData;
 import com.alibaba.excel.metadata.property.ExcelContentProperty;
 import org.dromara.common.core.utils.reflect.ReflectUtils;
 import org.dromara.common.excel.annotation.ExcelEnumFormat;
-import lombok.extern.slf4j.Slf4j;
-
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,8 +20,9 @@ import java.util.Map;
  *
  * @author Liang
  */
-@Slf4j
 public class ExcelEnumConvert implements Converter<Object> {
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ExcelEnumConvert.class);
+
 
     @Override
     public Class<Object> supportJavaTypeKey() {

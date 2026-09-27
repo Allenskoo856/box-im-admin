@@ -3,7 +3,6 @@ package org.dromara.system.controller.system;
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.hutool.core.util.ObjectUtil;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.UserConstants;
 import org.dromara.common.core.domain.R;
 import org.dromara.common.excel.utils.ExcelUtil;
@@ -27,7 +26,6 @@ import java.util.List;
  * @author Lion Li
  */
 @Validated
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/system/post")
 public class SysPostController extends BaseController {
@@ -130,4 +128,8 @@ public class SysPostController extends BaseController {
         return R.ok(list);
     }
 
+
+    public SysPostController(ISysPostService postService) {
+        this.postService = postService;
+    }
 }

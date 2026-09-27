@@ -9,7 +9,6 @@ import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.RequiredArgsConstructor;
 import org.dromara.common.core.constant.CacheNames;
 import org.dromara.common.core.constant.Constants;
 import org.dromara.common.core.constant.TenantConstants;
@@ -40,7 +39,6 @@ import java.util.*;
  *
  * @author Michelle.Chung
  */
-@RequiredArgsConstructor
 @Service
 public class SysTenantServiceImpl implements ISysTenantService {
 
@@ -461,4 +459,18 @@ public class SysTenantServiceImpl implements ISysTenantService {
         }
     }
 
+
+    public SysTenantServiceImpl(SysTenantMapper baseMapper, SysTenantPackageMapper tenantPackageMapper, SysUserMapper userMapper, SysDeptMapper deptMapper, SysRoleMapper roleMapper, SysRoleMenuMapper roleMenuMapper, SysRoleDeptMapper roleDeptMapper, SysUserRoleMapper userRoleMapper, SysDictTypeMapper dictTypeMapper, SysDictDataMapper dictDataMapper, SysConfigMapper configMapper) {
+        this.baseMapper = baseMapper;
+        this.tenantPackageMapper = tenantPackageMapper;
+        this.userMapper = userMapper;
+        this.deptMapper = deptMapper;
+        this.roleMapper = roleMapper;
+        this.roleMenuMapper = roleMenuMapper;
+        this.roleDeptMapper = roleDeptMapper;
+        this.userRoleMapper = userRoleMapper;
+        this.dictTypeMapper = dictTypeMapper;
+        this.dictDataMapper = dictDataMapper;
+        this.configMapper = configMapper;
+    }
 }
